@@ -1,9 +1,11 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 const StageHeader = () => {
     return (
-        <Text>Hello, I am your cat!</Text>
+        <>
+        <Text>? ? ? ? ? | Staging Incomplete</Text>
+        </>
     );
 }
 

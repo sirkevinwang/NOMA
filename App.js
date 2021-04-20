@@ -1,12 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import StageHeader from './components/StageHeader';
+import CaseTitleHeader from './components/CaseTitleHeader';
 
-import { StageHeader } from './components/StageHeader';
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <CaseTitleHeader />
       <StageHeader />
       <StatusBar style="auto" />
     </View>
