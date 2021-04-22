@@ -12,11 +12,11 @@ const NavigationBar = (props) => {
             let TSubtitle = TDepth[STAGE_TO_ID[props.TStage.depth] - 1].short_hand
             if (props.TStage.ulceration != null) {
                 if (props.TStage.ulceration === true) {
-                    TSubtitle += "b"
+                    TTitle += "b"
                 } else if (props.TStage.more_than_08mm && props.TStage.depth === "1") {
-                    TSubtitle += "b"
+                    TTitle += "b"
                 } else {
-                    TSubtitle += "a"
+                    TTitle += "a"
                 }
             }
             return { title: TTitle, subtitle: TSubtitle }

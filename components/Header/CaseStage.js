@@ -13,7 +13,8 @@ const CaseStage = (props) => {
     }
     return (
         <>
-        <Text>{computeStageString(props.stage)} | {props.caseStatus}</Text>
+        {/* <Text>{computeStageString(props.stage)} | {props.caseStatus}</Text> */}
+        <Text>{props.stage}</Text>
         </>
     );
 }
