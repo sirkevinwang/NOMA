@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Button, View, Text } from 'react-native';
 import CaseHeader from './components/Header/CaseHeader';
 import NavigationBar from './components/Navigation/NavigationBar';
 
@@ -45,6 +45,7 @@ export default function App() {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
