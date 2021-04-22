@@ -8,7 +8,7 @@ const emptyCaseData = {
         "T": {
             "depth": null,
             "ulceration": null,
-            "more_than_0.8mm": false
+            "more_than_08mm": false
         },
         "N": {
             "SLNB": null,

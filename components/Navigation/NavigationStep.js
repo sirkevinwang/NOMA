@@ -13,12 +13,11 @@ const NavigationStep = (props) => {
 const styles = StyleSheet.create({
     wrapper: {
         borderColor: '#000',
-        borderWidth: 2,
+        borderWidth: 1,
         borderStyle: 'solid',
         paddingHorizontal: 20,
         paddingVertical: 8,
         marginRight: 10
-        
     },
     stepTitle: {
         fontWeight: '700',
@@ -32,6 +31,5 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     }
 });
-
 
 export default NavigationStep

@@ -5,6 +5,7 @@ import CaseHeader from './components/Header/CaseHeader';
 import NavigationBar from './components/Navigation/NavigationBar';
 
 import emptyCaseData from './cases/empty-case';
+import TPage from './Pages/TPage';
 
 export default function App() {
   const [currentStep, setCurrentStep]= useState("T");
@@ -19,7 +20,7 @@ export default function App() {
   const [TStage, setTStage] = useState({
     "depth": null,
     "ulceration": null,
-    "more_than_0.8mm": null,
+    "more_than_08mm": null,
   });
 
   const [NStage, setNStage] = useState({
@@ -33,6 +34,8 @@ export default function App() {
     "mets_location": null
   })
 
+  const [randomInt, setRandomInt] = useState(0);
+
   return (
     <View style={styles.container}>
       <CaseHeader 
@@ -41,6 +44,12 @@ export default function App() {
         caseStagingStatus = {caseStagingStatus}
         fiveYearSurvival = {fiveYearSurvival}/>
       <NavigationBar />
+      {/* Page */}
+      <TPage 
+        TStage = {TStage}
+        setTStage = {setTStage} 
+        randomInt={randomInt}
+        setRandomInt={setRandomInt}/>
       <StatusBar style="auto" />
     </View>
   );
