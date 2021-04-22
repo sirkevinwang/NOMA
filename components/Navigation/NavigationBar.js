@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ShadowPropTypesIOS } from 'react-native';
 import NavigationStep from './NavigationStep';
 import TDepth from '../../data/TDepth';
 
@@ -13,9 +13,12 @@ const NavigationBar = (props) => {
             if (props.TStage.ulceration != null) {
                 if (props.TStage.ulceration === true) {
                     TSubtitle += "b"
+                } else if (props.TStage.more_than_08mm && props.TStage.depth === "1") {
+                    TSubtitle += "b"
+                } else {
+                    TSubtitle += "a"
                 }
             }
-
             return { title: TTitle, subtitle: TSubtitle }
         } else {
             return { title: "T", subtitle: "TBD" }
