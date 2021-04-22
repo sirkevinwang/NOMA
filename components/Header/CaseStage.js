@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-const StageHeader = () => {
+const CaseStage = (props) => {
     return (
         <>
-        <Text>? ? ? ? ? | Staging Incomplete</Text>
+        <Text>? ? ? | Staging Incomplete</Text>
         </>
     );
 }
 
-export default StageHeader;
+export default CaseStage;

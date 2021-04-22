@@ -1,12 +1,12 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-const CaseTitleHeader = () => {
+const CaseTitle = (props) => {
     return (
         <View>
-            <Text>R Distal Thigh, 2:30PM on Mar 20</Text>
+            <Text>{props.caseTitle}</Text>
         </View>
     )
 }
 
-export default CaseTitleHeader;
+export default CaseTitle;
