@@ -2,10 +2,12 @@ import React from 'react'
 import { View, Text, StyleSheet} from 'react-native'
 
 const NavigationStep = (props) => {
+
+    
     return (
         <View style={styles.wrapper}>
-            <Text style={styles.stepTitle}>T</Text>
-            <Text style={styles.stepSubtitle}>TBD</Text>
+            <Text style={styles.stepTitle}>{props.title}</Text>
+            <Text style={styles.stepSubtitle}>{props.subtitle}</Text>
         </View>
     )
 }

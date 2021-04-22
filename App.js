@@ -43,7 +43,7 @@ export default function App() {
         stage = {stage}
         caseStagingStatus = {caseStagingStatus}
         fiveYearSurvival = {fiveYearSurvival}/>
-      <NavigationBar />
+      <NavigationBar TStage={TStage}/>
       {/* Page */}
       <TPage 
         TStage = {TStage}

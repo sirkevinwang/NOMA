@@ -5,6 +5,19 @@ import CaseStage from './CaseStage';
 import CaseFiveYearSurvivalRate from './CaseFiveYearSurvivalRate';
 
 const CaseHeader = (props) => {
+
+    const computeStage = (params) => {
+        
+    }
+
+    const computeClinicalStage = (params) => {
+
+    }
+
+    const computeStagingStatus = (params) => {
+        
+    }
+    
     return (
         <View>
             <CaseTitle caseName={props.caseName}/>
