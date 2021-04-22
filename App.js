@@ -7,15 +7,13 @@ import NavigationBar from './components/Navigation/NavigationBar';
 import emptyCaseData from './cases/empty-case';
 
 export default function App() {
-
-
-  const [currentStep, setCurrentStep]= useState(0);
+  const [currentStep, setCurrentStep]= useState("T");
   // TOOD: should load default data from here
   // header
   const [caseName, setCaseName] = useState("Untitled Case");
   const [stage, setStage] = useState([null, null, null]);
-  const [caseStagingStatus, setCaseStagingStatus] = useState("Incomplete");
-  const [fiveYearExpactancy, setFiveYearExpectancy] = useState(null);
+  const [caseStagingStatus, setCaseStagingStatus] = useState("Staging Incomplete");
+  const [fiveYearSurvival, setFiveYearExpectancy] = useState(null);
 
   // T Stage
   const [TStage, setTStage] = useState({
@@ -37,7 +35,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <CaseHeader />
+      <CaseHeader 
+        caseName = {caseName}
+        stage = {stage}
+        caseStagingStatus = {caseStagingStatus}
+        fiveYearSurvival = {fiveYearSurvival}/>
       <NavigationBar />
       <StatusBar style="auto" />
     </View>

@@ -3,7 +3,7 @@ const emptyCaseData = {
     "stage": [null, null, null],
     "clincial_stage": null,
     "case_staging_status": "Incomplete",
-    "five_year_expectancy": null,
+    "five_year_survival": null,
     "staging": {
         "T": {
             "depth": null,

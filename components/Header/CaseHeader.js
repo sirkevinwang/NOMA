@@ -7,9 +7,9 @@ import CaseFiveYearSurvivalRate from './CaseFiveYearSurvivalRate';
 const CaseHeader = (props) => {
     return (
         <View>
-            <CaseTitle caseTitle={props.caseTitle}/>
-            <CaseStage stage={props.stage} clinicalStage={props.clinicalStage} caseStatus={props.caseStatus}/>
-            <CaseFiveYearSurvivalRate survivalRate={props.survivalRate}/>
+            <CaseTitle caseName={props.caseName}/>
+            <CaseStage stage={props.stage} caseStatus={props.caseStagingStatus}/>
+            <CaseFiveYearSurvivalRate survivalRate={props.fiveYearSurvival}/>
         </View>
     )
 }

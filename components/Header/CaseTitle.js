@@ -1,12 +1,19 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 const CaseTitle = (props) => {
     return (
         <View>
-            <Text>{props.caseTitle}</Text>
+            <Text style={styles.title}>{props.caseName}</Text>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    title: {
+        fontWeight: "800"
+    }
+});
+
 
 export default CaseTitle;
