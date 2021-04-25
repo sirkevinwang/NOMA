@@ -6,6 +6,9 @@ import NavigationBar from './components/Navigation/NavigationBar';
 
 import emptyCaseData from './cases/empty-case';
 import TPage from './Pages/TPage';
+import MPage from './Pages/MPage';
+
+
 
 export default function App() {
   const [currentStep, setCurrentStep]= useState("T");
@@ -29,6 +32,8 @@ export default function App() {
       "lab_confirmed": null,
       "MSI": null
   })
+
+  //M Stage 
   const [MStage, setMStage] = useState({
     "mets": null,
     "mets_location": null
@@ -51,6 +56,12 @@ export default function App() {
         setTStage = {setTStage} 
         randomInt={randomInt}
         setRandomInt={setRandomInt}/>
+      <MPage
+        MStage = {MStage}
+        setMStage = {setMStage}
+        randomInt = {randomInt}
+        setRandomInt={setRandomInt}
+      />
       <StatusBar style="auto" />
     </View>
   );
