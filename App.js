@@ -1,20 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Button, View, Text } from 'react-native';
+import { StyleSheet, Button, View, Text, Image, TouchableOpacity, TextInput } from 'react-native';
 import CaseHeader from './components/Header/CaseHeader';
 import NavigationBar from './components/Navigation/NavigationBar';
+
 
 import emptyCaseData from './cases/empty-case';
 import TPage from './Pages/TPage';
 
 export default function App() {
   const [currentStep, setCurrentStep]= useState("T");
+  const [toggleHeader, setToggleHeader] = useState(false);
+
   // TOOD: should load default data from here
   // header
   const [caseName, setCaseName] = useState("Untitled Case");
   const [stage, setStage] = useState([null, null, null]);
   const [caseStagingStatus, setCaseStagingStatus] = useState("Staging Incomplete");
   const [fiveYearSurvival, setFiveYearExpectancy] = useState(null);
+
+  const [text, setText] = useState('');
+
+
 
   // T Stage
   const [TStage, setTStage] = useState({
@@ -38,12 +45,34 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <CaseHeader 
+      {
+        toggleHeader?
+        <CaseHeader 
+        
         caseName = {caseName}
         stage = {stage}
         caseStagingStatus = {caseStagingStatus}
         fiveYearSurvival = {fiveYearSurvival}
-        TStage={TStage}/>
+        TStage={TStage}/>: 
+        <TextInput
+        style={{height: 40}}
+        placeholder="Type here to translate!"
+        onChangeText={text => setCaseName(text)}
+        defaultValue={text}
+      />
+        
+
+      }
+
+
+
+
+        <TouchableOpacity onPress={() => setToggleHeader(!toggleHeader)}>
+          <Image source={require('./assets/edit.png')} />
+
+
+        </TouchableOpacity>
+      
       <NavigationBar TStage={TStage}/>
       {/* Page */}
       <TPage 
