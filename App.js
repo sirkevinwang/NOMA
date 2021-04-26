@@ -19,6 +19,8 @@ export default function App() {
   const [caseStagingStatus, setCaseStagingStatus] = useState("Staging Incomplete");
   const [fiveYearSurvival, setFiveYearExpectancy] = useState(null);
 
+
+
   // T Stage
   const [TStage, setTStage] = useState({
     "depth": null,
@@ -56,12 +58,8 @@ export default function App() {
         setTStage = {setTStage} 
         randomInt={randomInt}
         setRandomInt={setRandomInt}/>
-      <MPage
-        MStage = {MStage}
-        setMStage = {setMStage}
-        randomInt = {randomInt}
-        setRandomInt={setRandomInt}
-      />
+
+   
       <StatusBar style="auto" />
     </View>
   );

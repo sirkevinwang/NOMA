@@ -23,6 +23,8 @@ const NavigationBar = (props) => {
         } else {
             return { title: "T", subtitle: "TBD" }
         }
+
+        const SLNB = () => {}
     }
     return (
         <View styles={styles.nav}>
@@ -30,7 +32,21 @@ const NavigationBar = (props) => {
                 <NavigationStep
                 title={calculateStepT().title}
                 subtitle={calculateStepT().subtitle}/>
-                {/* <NavigationStep TStage={props.TStage}/> */}
+
+                <NavigationStep
+                title={"SLNB"}
+                subtitle={"TBD"}/>
+
+                <NavigationStep
+                title={"N"}
+                subtitle={"TBD"}/>
+
+                 <NavigationStep
+                title={"M"}
+                subtitle={"TBD"}/>
+
+
+
             </View>
         </View>
     )
