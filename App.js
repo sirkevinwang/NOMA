@@ -6,6 +6,8 @@ import NavigationBar from './components/Navigation/NavigationBar';
 
 import emptyCaseData from './cases/empty-case';
 import TPage from './Pages/TPage';
+import NPage from './Pages/NPage';
+
 
 export default function App() {
   const [currentStep, setCurrentStep]= useState("T");
@@ -25,6 +27,7 @@ export default function App() {
 
   const [NStage, setNStage] = useState({
       "SLNB": null,
+      "node_number": null,
       "clinically_occult": null,
       "lab_confirmed": null,
       "MSI": null
@@ -51,6 +54,12 @@ export default function App() {
         setTStage = {setTStage} 
         randomInt={randomInt}
         setRandomInt={setRandomInt}/>
+        <NPage
+        NStage = {NStage}
+        setNStage = {setNStage}
+        randomInt={randomInt}
+        setRandomInt={setRandomInt}
+        />
       <StatusBar style="auto" />
     </View>
   );
@@ -62,7 +71,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'flex-start',
+    // alignItems: 'flex-start',
     justifyContent: 'center',
   },
 });
