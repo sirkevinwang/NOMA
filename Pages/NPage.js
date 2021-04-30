@@ -6,18 +6,36 @@ import NodesOptionButton from '../components/Options/NodesOptionButton';
 
 import NData from '../data/NData';
 import MSIData from '../data/MSIData';
+import ChoiceBlurb from '../components/Options/ChoiceBlurb';
 
 const NPage = (props) => {
     const styles = StyleSheet.create({
+        choicesContainer:{
+            marginTop: 20,
+            backgroundColor:'silver',
+            borderWidth: 1,
+            width: Dimensions.get('window').width* 0.92,
+            borderRadius: 6,
+            marginBottom: 10
+
+
+        },
+        blurb:{
+            padding: 16
+        },
         nodeOptionsContainer: {
             flexDirection:'row',
-            backgroundColor:'red',
+            alignItems: 'center',
             justifyContent: 'space-evenly', 
-
-            borderWidth: 1,
-
+            height: 100,
+            borderTopColor: 'gray',
+            borderTopWidth: 1,
+            padding:10
+        
             
         },  
+  
+     
     
     
     });
@@ -25,7 +43,6 @@ const NPage = (props) => {
 
     const DATA = NData;
     const MSIDATA = MSIData;
-
 
 
 
@@ -136,16 +153,49 @@ const NPage = (props) => {
 
     return (
         <React.Fragment>
-            <View style={styles.nodeOptionsContainer}>
-                {nodeNumberOptions}
-            </View>
-            <View style={styles.nodeOptionsContainer}>
-                {clincallyOccultOptions}
-            </View>
+                        
+                <View style={styles.choicesContainer}>
+                    <View style={styles.blurb}>
+                        <ChoiceBlurb 
+                            blurbHeader={'How many metastatic nodes were discovered?'}
+                            blurbDescription={'This establishes the baseline for nodal spread.'}
+                            /> 
 
-            <View style={styles.nodeOptionsContainer}>
-                {MSIOptions}
-            </View>
+                    </View>
+                    <View style={styles.nodeOptionsContainer}>
+                         {nodeNumberOptions}
+                     </View>
+                </View>
+
+
+                <View style={styles.choicesContainer}>
+                    <View style={styles.blurb}>
+                        <ChoiceBlurb 
+                            blurbHeader={'How many nodes were clinically\noccult?'}
+                            blurbDescription={'This helps us establish the clinical detectability'}
+                            /> 
+                    </View>
+                    
+                    <View style={styles.nodeOptionsContainer}>
+                         {clincallyOccultOptions}
+                     </View>
+                </View>
+            
+
+                <View style={styles.choicesContainer}>
+                    <View style={styles.blurb}>
+                        <ChoiceBlurb 
+                            blurbHeader={'What is the MSI Status?'}
+                            blurbDescription={'Lastly, MSI status helps us understand satellite, locally recurrent, or in transit lesions.'}
+                            /> 
+                    </View>
+                    
+                    <View style={styles.nodeOptionsContainer}>
+                         {MSIOptions}
+                     </View>
+                </View>
+
+    
 
 
 

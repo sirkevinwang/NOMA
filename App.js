@@ -10,13 +10,9 @@ import InfoCenter from './components/InfoCenter/InfoCenter';
 
 import emptyCaseData from './cases/empty-case';
 import TPage from './Pages/TPage';
-<<<<<<< HEAD
 import NPage from './Pages/NPage';
-=======
 import MPage from './Pages/MPage';
 import DrawerHeader from './components/InfoCenter/DrawerHeader';
-
->>>>>>> b701a08a8bc418a9433c27c7409744c287a18332
 
 
 export default function App() {
@@ -53,30 +49,6 @@ export default function App() {
   const ref = useRef()
 
   return (
-<<<<<<< HEAD
-    <View style={styles.container}>
-      <CaseHeader 
-        caseName = {caseName}
-        stage = {stage}
-        caseStagingStatus = {caseStagingStatus}
-        fiveYearSurvival = {fiveYearSurvival}
-        TStage={TStage}/>
-      <NavigationBar TStage={TStage}/>
-      {/* Page */}
-      <TPage 
-        TStage = {TStage}
-        setTStage = {setTStage} 
-        randomInt={randomInt}
-        setRandomInt={setRandomInt}/>
-        <NPage
-        NStage = {NStage}
-        setNStage = {setNStage}
-        randomInt={randomInt}
-        setRandomInt={setRandomInt}
-        />
-      <StatusBar style="auto" />
-    </View>
-=======
     <>
       <View style={styles.container}>
         <CaseHeader 
@@ -87,23 +59,25 @@ export default function App() {
           TStage={TStage}/>
         <NavigationBar TStage={TStage}/>
         {/* Page */}
-        <TPage 
+        {/* <TPage 
           TStage = {TStage}
-          setTStage = {setTStage} />
-        <MPage
+          setTStage = {setTStage} /> */}
+        {/* <MPage
           MStage = {MStage}
           setMStage = {setMStage}
-        />
+        /> */}
+        <NPage
+          NStage = {NStage}
+          setNStage= {setNStage}/>
         <StatusBar style="auto" />
       </View>
-      <BottomSheet
+      {/* <BottomSheet
         ref={ref}
         snapPoints={['80%', '40%', '20%']}
         renderContent={InfoCenter}
         renderHeader={DrawerHeader}
-      />
+      /> */}
     </>
->>>>>>> b701a08a8bc418a9433c27c7409744c287a18332
   );
 }
 
@@ -112,13 +86,8 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 18,
     flex: 1,
-<<<<<<< HEAD
-    backgroundColor: '#fff',
-    // alignItems: 'flex-start',
-=======
     backgroundColor: '#e8e8e8',
     alignItems: 'flex-start',
->>>>>>> b701a08a8bc418a9433c27c7409744c287a18332
     justifyContent: 'center',
   },
 });
