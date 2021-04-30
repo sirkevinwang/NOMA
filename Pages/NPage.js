@@ -17,8 +17,6 @@ const NPage = (props) => {
             width: Dimensions.get('window').width* 0.92,
             borderRadius: 6,
             marginBottom: 10
-
-
         },
         blurb:{
             padding: 16
@@ -30,21 +28,12 @@ const NPage = (props) => {
             height: 100,
             borderTopColor: 'gray',
             borderTopWidth: 1,
-            padding:10
-        
-            
+            padding:10      
         },  
-  
-     
-    
-    
     });
 
-
-    const DATA = NData;
+    const NDATA = NData;
     const MSIDATA = MSIData;
-
-
 
     //Checking if # of nodes button is active 
     const computeNodeNumberIsActive = (NStage, optionStage) => {
@@ -83,7 +72,7 @@ const NPage = (props) => {
     const nodeNumberOptionClicked = (id) => {
         props.setNStage(
             {
-                "node_number": DATA[id - 1].option_stage,
+                "node_number": NDATA[id - 1].option_stage,
                 "clinically_occult": props.NStage.clinically_occult,
                 "lab_confirmed": props.NStage.lab_confirmed,
                 "MSI": props.NStage.MSI,
@@ -96,7 +85,7 @@ const NPage = (props) => {
         props.setNStage(
             {
                 "node_number": props.NStage.node_number,
-                "clinically_occult": DATA[id - 1].option_stage,
+                "clinically_occult": NDATA[id - 1].option_stage,
                 "lab_confirmed": props.NStage.lab_confirmed,
                 "MSI": props.NStage.MSI,
             }
@@ -117,7 +106,7 @@ const NPage = (props) => {
 
 
     //creating the options for the number of nodes
-    const nodeNumberOptions = DATA.map((option) =>
+    const nodeNumberOptions = NDATA.map((option) =>
        
             <NodesOptionButton 
                 key={option.id} 
@@ -129,7 +118,7 @@ const NPage = (props) => {
     );
 
     //creating the options for the clincally occult options
-    const clincallyOccultOptions = DATA.map((option) => 
+    const clincallyOccultOptions = NDATA.map((option) => 
         <NodesOptionButton 
             key={option.id} 
             primaryTitle={option.option_stage}
