@@ -7,6 +7,7 @@ import NavigationBar from './components/Navigation/NavigationBar';
 import emptyCaseData from './cases/empty-case';
 import TPage from './Pages/TPage';
 import MPage from './Pages/MPage';
+import SLNBPage from './Pages/SLNBPage';
 
 
 
@@ -19,6 +20,8 @@ export default function App() {
   const [caseStagingStatus, setCaseStagingStatus] = useState("Staging Incomplete");
   const [fiveYearSurvival, setFiveYearExpectancy] = useState(null);
 
+
+ 
 
 
   // T Stage
@@ -43,6 +46,7 @@ export default function App() {
 
   const [randomInt, setRandomInt] = useState(0);
 
+
   return (
     <View style={styles.container}>
       <CaseHeader 
@@ -51,18 +55,25 @@ export default function App() {
         caseStagingStatus = {caseStagingStatus}
         fiveYearSurvival = {fiveYearSurvival}
         TStage={TStage}/>
-      <NavigationBar TStage={TStage}/>
-      {/* Page */}
+      <NavigationBar setCurrentStep = {setCurrentStep} TStage={TStage} NStage = {NStage}/>
+
       <TPage 
         TStage = {TStage}
         setTStage = {setTStage} 
-        randomInt={randomInt}
-        setRandomInt={setRandomInt}/>
+     />
+      <SLNBPage 
+        NStage = {NStage}
+        setNStage = {setNStage} 
+      />
+
+
+
 
    
       <StatusBar style="auto" />
     </View>
   );
+
 }
 
 

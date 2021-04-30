@@ -4,6 +4,15 @@ import NavigationStep from './NavigationStep';
 import TDepth from '../../data/TDepth';
 
 const NavigationBar = (props) => {
+
+     /* Some sort of onClick to switch between the pages */
+
+    const switchPage = (name) =>
+    {
+        props.setCurrentStep(name)
+    }
+
+
     const calculateStepT = () => {
         const STAGE_TO_ID = {"X": 1, "0": 2, "is": 3, "1": 4, "2": 5, "3": 6, "4": 7}
         // this is hard coded
@@ -24,27 +33,51 @@ const NavigationBar = (props) => {
             return { title: "T", subtitle: "TBD" }
         }
 
-        const SLNB = () => {}
+       
     }
+     const calculateSLNB = ()  => {
+        if (props.NStage.SLNB === "Not performed") {
+            return "TBD"
+
+        }
+
+         if (props.NStage.SLNB === "Positive") {
+            return "Positive"
+
+        }
+
+         if (props.NStage.SLNB === "Negative") {
+            return "Negative"
+
+        }
+
+        return "TBD"
+    }
+
     return (
         <View styles={styles.nav}>
             <View style={styles.row}>
                 <NavigationStep
                 title={calculateStepT().title}
-                subtitle={calculateStepT().subtitle}/>
+                subtitle={calculateStepT().subtitle}
+                onPress={() => switchPage("T")}
+                />
 
                 <NavigationStep
                 title={"SLNB"}
-                subtitle={"TBD"}/>
+                subtitle={calculateSLNB()}
+                onPress={() => switchPage("SLNB")}
+                />
 
                 <NavigationStep
                 title={"N"}
-                subtitle={"TBD"}/>
+                subtitle={"TBD"}
+                onPress={() => switchPage("N")}/>
 
                  <NavigationStep
                 title={"M"}
-                subtitle={"TBD"}/>
-
+                subtitle={"TBD"}
+                onPress={() => switchPage("M")}/>
 
 
             </View>

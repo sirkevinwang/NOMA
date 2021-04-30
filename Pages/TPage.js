@@ -9,6 +9,7 @@ const TPage = (props) => {
 
 
     const computeIsActive = (TStage, optionStage) => {
+        
         if (TStage.depth === null) {
             return false
         } else if (TStage.depth === optionStage) {
@@ -16,6 +17,7 @@ const TPage = (props) => {
         } else {
             return false
         }
+
     }
 
     const depthOptionClicked = (id) => {
