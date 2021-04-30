@@ -1,12 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { StyleSheet, Button, View, Text } from 'react-native';
+import Animated from 'react-native-reanimated';
+import BottomSheet from 'reanimated-bottom-sheet';
+
 import CaseHeader from './components/Header/CaseHeader';
 import NavigationBar from './components/Navigation/NavigationBar';
+import InfoCenter from './components/InfoCenter/InfoCenter';
 
 import emptyCaseData from './cases/empty-case';
 import TPage from './Pages/TPage';
 import MPage from './Pages/MPage';
+import DrawerHeader from './components/InfoCenter/DrawerHeader';
 
 
 
@@ -40,30 +45,35 @@ export default function App() {
   })
 
   const [randomInt, setRandomInt] = useState(0);
+  const ref = useRef()
 
   return (
-    <View style={styles.container}>
-      <CaseHeader 
-        caseName = {caseName}
-        stage = {stage}
-        caseStagingStatus = {caseStagingStatus}
-        fiveYearSurvival = {fiveYearSurvival}
-        TStage={TStage}/>
-      <NavigationBar TStage={TStage}/>
-      {/* Page */}
-      <TPage 
-        TStage = {TStage}
-        setTStage = {setTStage} 
-        randomInt={randomInt}
-        setRandomInt={setRandomInt}/>
-      <MPage
-        MStage = {MStage}
-        setMStage = {setMStage}
-        randomInt = {randomInt}
-        setRandomInt={setRandomInt}
+    <>
+      <View style={styles.container}>
+        <CaseHeader 
+          caseName = {caseName}
+          stage = {stage}
+          caseStagingStatus = {caseStagingStatus}
+          fiveYearSurvival = {fiveYearSurvival}
+          TStage={TStage}/>
+        <NavigationBar TStage={TStage}/>
+        {/* Page */}
+        <TPage 
+          TStage = {TStage}
+          setTStage = {setTStage} />
+        <MPage
+          MStage = {MStage}
+          setMStage = {setMStage}
+        />
+        <StatusBar style="auto" />
+      </View>
+      <BottomSheet
+        ref={ref}
+        snapPoints={['80%', '40%', '20%']}
+        renderContent={InfoCenter}
+        renderHeader={DrawerHeader}
       />
-      <StatusBar style="auto" />
-    </View>
+    </>
   );
 }
 
@@ -72,7 +82,7 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 18,
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#e8e8e8',
     alignItems: 'flex-start',
     justifyContent: 'center',
   },

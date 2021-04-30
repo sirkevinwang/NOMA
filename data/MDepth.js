@@ -17,22 +17,22 @@ const MDepth = [
         "id": 3,
         "stage": "M",
         "option_stage": "1b",
-        "description": "Lung metastasis, with or without M1a involvement",
-        "short_hand": "Lung Metastasis"
+        "description": "Lung metastasis",
+        "short_hand": "Lung"
     },
     {
         "id": 4,
         "stage": "M",
         "option_stage": "1c",
-        "description": "Distant metastasis to non–central nervous system (CNS) visceral sites with or without M1a or M1b involvement",
-        "short_hand": "Distant Metastasis to non-CNS"
+        "description": "Distant metastasis to non–CNS visceral sites",
+        "short_hand": "Distant"
     },
     {
         "id": 5,
         "stage": "M",
         "option_stage": "1d",
-        "description": "Distant metastasis to CNS, with or without M1a or M1b involvement",
-        "short_hand": "Distant Metastasis to CNS"
+        "description": "Distant metastasis to CNS",
+        "short_hand": "CNS"
     },
 
 ]
