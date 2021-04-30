@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Text, TouchableWithoutFeedback, StyleSheet } from 'react-native'
+import ChoiceBlurb from './ChoiceBlurb';
 
 const OptionButton = (props) => {
     const styles = StyleSheet.create({
@@ -7,7 +8,7 @@ const OptionButton = (props) => {
             fontWeight: '800'
         },
         textWrapper: {
-            flexDirection: 'row',
+            flexDirection:'row',
             flexWrap: 'wrap',
             textAlign: 'center',
             borderWidth: 1,
@@ -24,6 +25,7 @@ const OptionButton = (props) => {
 
     return (
         <View >
+            
             <TouchableWithoutFeedback onPress={props.onClick}>
                 <View style={styles.textWrapper}>
                     <Text style={props.isActive ? [styles.activeTextColor, styles.bold] : [styles.bold]}>{props.primaryTitle}: </Text>
