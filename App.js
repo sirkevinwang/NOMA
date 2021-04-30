@@ -10,9 +10,9 @@ import InfoCenter from './components/InfoCenter/InfoCenter';
 
 import emptyCaseData from './cases/empty-case';
 import TPage from './Pages/TPage';
+import NPage from './Pages/NPage';
 import MPage from './Pages/MPage';
 import DrawerHeader from './components/InfoCenter/DrawerHeader';
-
 
 
 export default function App() {
@@ -33,6 +33,7 @@ export default function App() {
 
   const [NStage, setNStage] = useState({
       "SLNB": null,
+      "node_number": null,
       "clinically_occult": null,
       "lab_confirmed": null,
       "MSI": null
@@ -58,21 +59,24 @@ export default function App() {
           TStage={TStage}/>
         <NavigationBar TStage={TStage}/>
         {/* Page */}
-        <TPage 
+        {/* <TPage 
           TStage = {TStage}
-          setTStage = {setTStage} />
-        <MPage
+          setTStage = {setTStage} /> */}
+        {/* <MPage
           MStage = {MStage}
           setMStage = {setMStage}
-        />
+        /> */}
+        <NPage
+          NStage = {NStage}
+          setNStage= {setNStage}/>
         <StatusBar style="auto" />
       </View>
-      <BottomSheet
+      {/* <BottomSheet
         ref={ref}
         snapPoints={['80%', '40%', '20%']}
         renderContent={InfoCenter}
         renderHeader={DrawerHeader}
-      />
+      /> */}
     </>
   );
 }
