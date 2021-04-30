@@ -1,4 +1,4 @@
-const StagingActionGroups = {
+const ActionGroups = {
     "1": {
         "actions": {
             "Workup": {
@@ -30,4 +30,4 @@ const StagingActionGroups = {
     }
 }
 
-export default StagingActionGroups;
+export default ActionGroups;

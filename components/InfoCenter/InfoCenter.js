@@ -1,11 +1,11 @@
 import React, { useRef }  from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import InfoCenterActionItem from './InfoCenterActionItem';
-import StagingActionGroups from '../../data/StagingActionGroups';
+import ActionGroups from '../../data/ActionGroups';
 import InfoCenterContent from './InfoCenterContent';
 
 const InfoCenter = () => {
-    const DATA = StagingActionGroups;
+    const DATA = ActionGroups;
     const sampleActionsObject = DATA[1]["actions"]; // HARD CODED
     return (
         <View style={{
