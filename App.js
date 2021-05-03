@@ -45,10 +45,11 @@ export default function App() {
     "mets_location": null
   })
 
-  const [randomInt, setRandomInt] = useState(0);
   const ref = useRef()
 
-
+  const InfoCenterWrapper = () => {
+    return <InfoCenter stage={computeStage(TStage, NStage, MStage)}></InfoCenter>
+  }
 
   // Simply calcuate the stage from TNM options
   const computeStage = (T, N, M) => {
@@ -95,24 +96,24 @@ export default function App() {
         />
         <NavigationBar TStage={TStage}/>
         {/* Page */}
-        {/* <TPage 
+        <TPage 
           TStage = {TStage}
-          setTStage = {setTStage} /> */}
+          setTStage = {setTStage} />
         {/* <MPage
           MStage = {MStage}
           setMStage = {setMStage}
         /> */}
-        <NPage
+        {/* <NPage
           NStage = {NStage}
           setNStage= {setNStage}/>
-        <StatusBar style="auto" />
+        <StatusBar style="auto" /> */}
       </View>
-      {/* <BottomSheet
+      <BottomSheet
         ref={ref}
         snapPoints={['80%', '40%', '20%']}
-        renderContent={InfoCenter}
+        renderContent={InfoCenterWrapper}
         renderHeader={DrawerHeader}
-      /> */}
+      />
     </>
   );
 }
