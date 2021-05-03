@@ -19,11 +19,8 @@ print(sh.cell_value(0,3))
 
 print("")
 
-for index in range(1, sh.nrows - 1):
-	print("\"" + sh.cell_value(index,1) + "\" : { \"survival_rate\": \"" + str(int(sh.cell_value(index,2) * 100)) + "%\", \"action_group\": \"" + str(int(sh.cell_value(index,0))) + "\", \"pathologic_stage\": \"" + str(sh.cell_value(index,3)) + "\" }, ")
-
-index = sh.nrows - 1
-print("\"" + sh.cell_value(index,1) + "\" : { \"survival_rate\": \"" + str(sh.cell_value(index,2)) + "%\", \"action_group\": \"" + str(int(sh.cell_value(index,0))) + "\", \"pathologic_stage\": \"" + str(sh.cell_value(index,3)) + "\" } ")
-
-
+print("{")
+for index in range(1, sh.nrows):
+	print("\"" + sh.cell_value(index,1) + "\" : { \"survival_rate\": \"" + str(int(sh.cell_value(index,2) * 100)) + "%\", \"action_group\": \"" + str(int(sh.cell_value(index,0))) + "\", \"pathologic_stage\": \"" + str(sh.cell_value(index,3)) + "\", \"clincal_stage\": \"" + str(sh.cell_value(index,4)) + "\"}, ")
+print("}")
 
