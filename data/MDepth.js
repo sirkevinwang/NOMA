@@ -11,28 +11,28 @@ const MDepth = [
         "stage": "M",
         "option_stage": "1a",
         "description": "Metastases to skin, soft tissue (including muscle), and/or nonregional lymph nodes",
-        "short_hand": "1a"
+        "short_hand": "Skin & Tissue"
     },
     {
         "id": 3,
         "stage": "M",
         "option_stage": "1b",
         "description": "Lung metastasis",
-        "short_hand": "Lung"
+        "short_hand": "Lung Mets"
     },
     {
         "id": 4,
         "stage": "M",
         "option_stage": "1c",
         "description": "Distant metastasis to non–CNS visceral sites",
-        "short_hand": "Distant"
+        "short_hand": "Non-CNS mets"
     },
     {
         "id": 5,
         "stage": "M",
         "option_stage": "1d",
         "description": "Distant metastasis to CNS",
-        "short_hand": "CNS"
+        "short_hand": "CNS mets"
     },
 
 ]

@@ -12,6 +12,9 @@ import emptyCaseData from './cases/empty-case';
 import TPage from './Pages/TPage';
 import NPage from './Pages/NPage';
 import MPage from './Pages/MPage';
+import SLNBPage from './Pages/SLNBPage';
+
+
 import DrawerHeader from './components/InfoCenter/DrawerHeader';
 
 
@@ -62,20 +65,28 @@ export default function App() {
           caseStagingStatus = {caseStagingStatus}
           fiveYearSurvival = {fiveYearSurvival}
           TStage={TStage}/>
-        <NavigationBar TStage={TStage}/>
+        <NavigationBar 
+        TStage={TStage}
+        NStage={NStage}
+        MStage={MStage}
+        />
         {/* Page */}
-        {/* <TPage 
+        <TPage 
           TStage = {TStage}
-          setTStage = {setTStage} /> */}
-        {/* <MPage
+          setTStage = {setTStage} />
+        <MPage
           MStage = {MStage}
           setMStage = {setMStage}
-        /> */}
-        <NPage
+        />
+        {/* <NPage
           NStage = {NStage}
-          setNStage= {setNStage}/>
+          setNStage= {setNStage}/> */}
         <StatusBar style="auto" />
       </View>
+      {/* <SLNBPage
+        NStage = {NStage}
+        setNStage = {setNStage}
+      /> */}
       {/* <BottomSheet
         ref={ref}
         snapPoints={['80%', '40%', '20%']}

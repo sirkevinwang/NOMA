@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet, ShadowPropTypesIOS } from 'react-native';
 import NavigationStep from './NavigationStep';
 import TDepth from '../../data/TDepth';
+import MDepth from '../../data/MDepth';
 
 const NavigationBar = (props) => {
 
@@ -13,6 +14,17 @@ const NavigationBar = (props) => {
     }
 
 
+    const calculateStepM = () => {
+        const STAGE_TO_ID = {"0": 1, "1a": 2, "1b": 3, "1c": 4, "1d": 5}
+
+        if (props.MStage.mets != null) {
+            let MTitle = "M" + props.MStage.mets
+            let MSubtitle = MDepth[STAGE_TO_ID[props.MStage.mets] - 1].short_hand
+            return {title:MTitle, subtitle:MSubtitle}
+        }
+        return {title:'M', subtitle:'TBD'}
+
+    }
     const calculateStepT = () => {
         const STAGE_TO_ID = {"X": 1, "0": 2, "is": 3, "1": 4, "2": 5, "3": 6, "4": 7}
         // this is hard coded
@@ -38,21 +50,16 @@ const NavigationBar = (props) => {
      const calculateSLNB = ()  => {
         if (props.NStage.SLNB === "Not performed") {
             return "TBD"
-
         }
-
          if (props.NStage.SLNB === "Positive") {
             return "Positive"
-
         }
-
          if (props.NStage.SLNB === "Negative") {
             return "Negative"
-
         }
-
         return "TBD"
     }
+
 
     return (
         <View styles={styles.nav}>
@@ -75,8 +82,8 @@ const NavigationBar = (props) => {
                 onPress={() => switchPage("N")}/>
 
                  <NavigationStep
-                title={"M"}
-                subtitle={"TBD"}
+                title={calculateStepM().title}
+                subtitle={calculateStepM().subtitle}
                 onPress={() => switchPage("M")}/>
 
 
