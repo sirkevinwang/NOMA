@@ -27,10 +27,7 @@ export default function App() {
   const [caseStagingStatus, setCaseStagingStatus] = useState("Staging Incomplete");
   const [fiveYearSurvival, setFiveYearExpectancy] = useState(null);
 
-
- 
-
-
+  
   // T Stage
   const [TStage, setTStage] = useState({
     "depth": null,
@@ -55,6 +52,30 @@ export default function App() {
   const [randomInt, setRandomInt] = useState(0);
   const ref = useRef()
 
+  //Rendering Page Function
+  const renderPage = () => {
+ 
+    switch(currentStep){
+      case 'T':
+        return (<TPage 
+                    TStage = {TStage}
+                   setTStage = {setTStage}
+                />)
+      case 'N':
+        return (<NPage
+                  NStage = {NStage}
+                  setNStage= {setNStage}/>)
+       case 'M':
+        return (<MPage
+                  MStage = {MStage}
+                  setMStage= {setMStage}/>)
+       case 'SLNB':
+        return (<SLNBPage
+                  NStage = {NStage}
+                  setNStage= {setNStage}/>)
+    }
+}
+
 
   return (
     <>
@@ -66,33 +87,14 @@ export default function App() {
           fiveYearSurvival = {fiveYearSurvival}
           TStage={TStage}/>
         <NavigationBar 
-        TStage={TStage}
-        NStage={NStage}
-        MStage={MStage}
+          TStage={TStage}
+          NStage={NStage}
+          MStage={MStage}
+          setCurrentStep={setCurrentStep}
         />
-        {/* Page */}
-        <TPage 
-          TStage = {TStage}
-          setTStage = {setTStage} />
-        <MPage
-          MStage = {MStage}
-          setMStage = {setMStage}
-        />
-        {/* <NPage
-          NStage = {NStage}
-          setNStage= {setNStage}/> */}
-        <StatusBar style="auto" />
+
+        {renderPage()}
       </View>
-      {/* <SLNBPage
-        NStage = {NStage}
-        setNStage = {setNStage}
-      /> */}
-      {/* <BottomSheet
-        ref={ref}
-        snapPoints={['80%', '40%', '20%']}
-        renderContent={InfoCenter}
-        renderHeader={DrawerHeader}
-      /> */}
     </>
   );
 
