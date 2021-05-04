@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import InfoCenterActionItem from './InfoCenterActionItem';
 import ActionGroups from '../../data/ActionGroups';
 import InfoCenterContent from './InfoCenterContent';
+import DrawerHeader from './DrawerHeader';
 
 const InfoCenter = () => {
     const DATA = ActionGroups;
@@ -13,6 +14,8 @@ const InfoCenter = () => {
             padding: 16,
             height: 800
         }}>
+
+            <DrawerHeader title={'hello world'} />
             <InfoCenterContent sections={sampleActionsObject}></InfoCenterContent>
         </View>
     )

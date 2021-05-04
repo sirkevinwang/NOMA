@@ -107,12 +107,12 @@ export default function App() {
           setNStage= {setNStage}/>
         <StatusBar style="auto" />
       </View>
-      {/* <BottomSheet
+      <BottomSheet
         ref={ref}
         snapPoints={['80%', '40%', '20%']}
         renderContent={InfoCenter}
         renderHeader={DrawerHeader}
-      /> */}
+      />
     </>
   );
 }
