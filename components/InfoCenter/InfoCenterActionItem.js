@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 const InfoCenterActionItem = (props) => {
     const computeMEClasses = (cArr) => {
@@ -18,10 +18,10 @@ const InfoCenterActionItem = (props) => {
         return str
     }
     return (
-        <View>
-            <Text>{props.title}</Text>
+        <View style={styles.container}>
+            <Text style={styles.title}>{props.title}</Text>
             {props.notes.map((note) =>
-                <Text key="note">·{note}</Text>
+                <Text key="note">{note}</Text>
             )}
             <Text>
             {computeMEClasses(props.classes)}
@@ -29,5 +29,17 @@ const InfoCenterActionItem = (props) => {
        </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        padding: 16,
+        backgroundColor: "transparent",
+        borderBottomLeftRadius: 2,
+        borderBottomRightRadius: 2,
+    },
+    title: {
+        fontWeight: "600"
+    }
+})
 
 export default InfoCenterActionItem
