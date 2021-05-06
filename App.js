@@ -8,6 +8,7 @@ import CaseHeader from './components/Header/CaseHeader';
 import NavigationBar from './components/Navigation/NavigationBar';
 import InfoCenter from './components/InfoCenter/InfoCenter';
 
+
 import emptyCaseData from './cases/empty-case';
 import TPage from './Pages/TPage';
 import NPage from './Pages/NPage';
@@ -21,13 +22,14 @@ import StagingData from './data/StagingData';
 
 export default function App() {
   const [currentStep, setCurrentStep]= useState("T");
+
   // TOOD: should load default data from here
   // header
+
   const [caseName, setCaseName] = useState("Untitled Case");
   const [caseStagingStatus, setCaseStagingStatus] = useState("Staging Incomplete");
   const [fiveYearSurvival, setFiveYearExpectancy] = useState(null);
 
-  
   // T Stage
   const [TStage, setTStage] = useState({
     "depth": null,
@@ -114,6 +116,7 @@ export default function App() {
   }
 
   return (
+
     <>
       <View style={styles.container}>
         <CaseHeader 
@@ -141,7 +144,6 @@ export default function App() {
       />
     </>
   );
-
 }
 
 const styles = StyleSheet.create({
