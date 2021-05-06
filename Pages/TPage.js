@@ -124,12 +124,14 @@ const TPage = (props) => {
                             />
                         </View>,
                         <View style={{ flexDirection: 'row', flexBasis: 0, flexGrow: 1, justifyContent: 'space-between', opacity: renderUlcerationBreslowDepthOpacity()}}>
-                            <OptionButton primaryTitle="a"
+                            <OptionButton 
+                                primaryTitle="a"
                                 description="<0.8mm"
                                 isActive={renderUlcerationBreslowDepthActive(false)}
                                 onClick={() => { ulcerationBreslowDepthClicked(false) }}
                             />
-                            <OptionButton primaryTitle="b"
+                            <OptionButton 
+                                primaryTitle="b"
                                 description="0.8-1.0mm"
                                 isActive={renderUlcerationBreslowDepthActive(true)}
                                 onClick={() => { ulcerationBreslowDepthClicked(true) }}

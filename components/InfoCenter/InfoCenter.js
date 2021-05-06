@@ -15,7 +15,13 @@ const InfoCenter = (props) => {
             // has the intermediate stage
             // then look up the action items
             const groupNumber = STAGING_DATA[props.stage].action_group;
-            return ACTION_GROUPS[groupNumber]["actions"];
+
+            if (groupNumber in ACTION_GROUPS) {
+                // check if key exists
+                return ACTION_GROUPS[groupNumber]["actions"];
+            } else {
+                return null
+            }
         } else {
             // doesn't have intermediate stage
             return null
