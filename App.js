@@ -169,6 +169,6 @@ const styles = StyleSheet.create({
   },
   contentView: {
     backgroundColor: "#EDEEFC",
-    paddingHorizontal: 18
+    paddingHorizontal: 18,
   }
 });

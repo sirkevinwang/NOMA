@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
 const InfoCenterActionItem = (props) => {
-    const computeMEClasses = (cArr) => {
+    const computeMEs = (cArr) => {
         let str = ""
         if (cArr.length > 1) {
             for (let i = 0; i < cArr.length; i++) {
@@ -24,7 +24,7 @@ const InfoCenterActionItem = (props) => {
                 <Text key="note">{note}</Text>
             )}
             <Text>
-            {computeMEClasses(props.classes)}
+            {computeMEs(props.classes)}
             </Text>
        </View>
     )
