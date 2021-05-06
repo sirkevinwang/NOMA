@@ -3,14 +3,29 @@ import { View, Text } from 'react-native'
 import InfoCenterSection from './InfoCenterSection'
 
 const InfoCenterContent = (props) => {
-    const sections = props.sections
-    const keys = Object.keys(props.sections)
+
+    const renderItems = () => {
+        if (props.sections === null) {
+            // then say no action items available
+            return (
+                <Text>No action item available.</Text>
+            )
+        } else {
+            const sections = props.sections
+            const keys = Object.keys(props.sections)
+            return (
+            <View>
+                {keys.map((k) => 
+                    <InfoCenterSection key={k} sectionHeader={k} sectionObject={sections[k]}></InfoCenterSection>
+                )}
+            </View>
+            )
+        }
+    }
 
     return (
         <View>
-           {keys.map((k) => 
-                <InfoCenterSection key={k} sectionHeader={k} sectionObject={sections[k]}></InfoCenterSection>
-           )}
+            {renderItems()}
         </View>
     )
 }

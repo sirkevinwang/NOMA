@@ -17,13 +17,13 @@ import SLNBPage from './Pages/SLNBPage';
 
 import DrawerHeader from './components/InfoCenter/DrawerHeader';
 
+import StagingData from './data/StagingData';
 
 export default function App() {
   const [currentStep, setCurrentStep]= useState("T");
   // TOOD: should load default data from here
   // header
   const [caseName, setCaseName] = useState("Untitled Case");
-  const [stage, setStage] = useState([null, null, null]);
   const [caseStagingStatus, setCaseStagingStatus] = useState("Staging Incomplete");
   const [fiveYearSurvival, setFiveYearExpectancy] = useState(null);
 
@@ -49,7 +49,6 @@ export default function App() {
     "mets_location": null
   })
 
-  const [randomInt, setRandomInt] = useState(0);
   const ref = useRef()
 
   //Rendering Page Function
@@ -76,15 +75,52 @@ export default function App() {
     }
 }
 
+  const InfoCenterWrapper = () => {
+    return <InfoCenter stage={computeStage(TStage, NStage, MStage)}></InfoCenter>
+  }
+
+  // Simply calcuate the stage from TNM options
+  const computeStage = (T, N, M) => {
+    let stage = ""
+    // this is hard coded
+    if (T.depth != null) {
+      stage = "T" + T.depth
+      if (T.ulceration != null) {
+        if (T.ulceration === true) {
+          stage += "b"
+        } else if (T.more_than_08mm && T.depth === "1") {
+          stage += "b"
+        } else {
+          stage += "a"
+        }
+      }
+    } else {
+      stage += ""
+    }
+
+    return stage + ""
+  }
+
+  const computeFiveYearSurvival = () => {
+    let STAGING_DATA = StagingData;
+    let stage = computeStage(TStage, NStage, MStage);
+    if (stage in STAGING_DATA) {
+      if ("survival_rate" in STAGING_DATA[stage]) {
+        return STAGING_DATA[stage].survival_rate
+      }
+    } else {
+      return "TBD"
+    }
+  }
 
   return (
     <>
       <View style={styles.container}>
         <CaseHeader 
           caseName = {caseName}
-          stage = {stage}
+          stage = {computeStage(TStage, NStage, MStage)}
           caseStagingStatus = {caseStagingStatus}
-          fiveYearSurvival = {fiveYearSurvival}
+          fiveYearSurvival={computeFiveYearSurvival()}
           TStage={TStage}/>
         <NavigationBar 
           TStage={TStage}
@@ -92,14 +128,18 @@ export default function App() {
           MStage={MStage}
           setCurrentStep={setCurrentStep}
         />
-
         {renderPage()}
       </View>
+      <BottomSheet
+        ref={ref}
+        snapPoints={['80%', '40%', '20%']}
+        renderContent={InfoCenterWrapper}
+        renderHeader={DrawerHeader}
+      />
     </>
   );
 
 }
-
 
 const styles = StyleSheet.create({
   container: {
