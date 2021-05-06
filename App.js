@@ -83,24 +83,66 @@ export default function App() {
 
   // Simply calcuate the stage from TNM options
   const computeStage = (T, N, M) => {
-    let stage = "TBD"
-    // this is hard coded
-    if (T.depth != null) {
-      stage = "T" + T.depth
-      if (T.ulceration != null) {
-        if (T.ulceration === true) {
-          stage += "b"
-        } else if (T.more_than_08mm && T.depth === "1") {
-          stage += "b"
-        } else {
-          stage += "a"
+
+    const calculateStepT = () => {
+      let TTitle = ""
+      // this is hard coded
+      if (T.depth != null) {
+        TTitle = "T" + T.depth
+        if (T.ulceration != null) {
+          if (T.ulceration === true) {
+            TTitle += "b"
+          } else if (T.more_than_08mm && T.depth === "1") {
+            TTitle += "b"
+          } else {
+            TTitle += "a"
+          }
         }
       }
-    } else {
-      stage += ""
+      return TTitle
+    }
+    const calculateStepN = () => {
+      const MET_NODES_TO_ID = { "0": 0, "1": 1, "2": 2, "3": 3, "3+": 4 }
+      let NTitle = ""
+
+      //helps caclulcate what's to be updated for the node number question
+      if (NStage.node_number != null) {
+        NTitle = 'N' + NStage.node_number
+      }
+
+      const OCC_NODES_TO_TITLE = { "0": 'a', "1": 'a', "2": 'b', "3": 'b', "3+": 'c' }
+
+      //helps caclulcate what's to be updated for the number of clinically occult question
+      if (NStage.clinically_occult != null) {
+        NTitle = NTitle + OCC_NODES_TO_TITLE[NStage.clinically_occult]
+      }
+
+      return NTitle
     }
 
-    return stage + ""
+
+    //Method to update the heading on the M Stage in the Stepper 
+    const calculateStepM = () => {
+      const STAGE_TO_ID = { "0": 1, "1a": 2, "1b": 3, "1c": 4, "1d": 5 }
+
+      if (MStage.mets != null) {
+        let MTitle = "M" + MStage.mets
+        return MTitle
+      }
+      return ""
+
+    }
+    
+    let stage = ""
+    stage += calculateStepT()
+    stage += calculateStepN()
+    stage += calculateStepM()
+
+    if (stage === "") {
+      return "TBD"
+    } else {
+      return stage
+    }
   }
 
   const computeFiveYearSurvival = () => {
