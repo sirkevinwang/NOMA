@@ -7,7 +7,7 @@ import TDepth from '../data/TDepth';
 const TPage = (props) => {
     const styles = StyleSheet.create({
         container:{
-            borderWidth: 2,
+            marginTop: 15,
         }
     });
     const DATA = TDepth;
@@ -46,7 +46,7 @@ const TPage = (props) => {
     );
 
     return (
-        <View>
+        <View style={styles.container}>
             {options}
         </View>
     )
