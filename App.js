@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useRef } from 'react';
-import { StyleSheet, Button, View, Text, ScrollView} from 'react-native';
+import { StyleSheet, Button, View, Text, ScrollView, SafeAreaView} from 'react-native';
 import Animated from 'react-native-reanimated';
 import BottomSheet from 'reanimated-bottom-sheet';
 
@@ -78,7 +78,7 @@ export default function App() {
 }
 
   const InfoCenterWrapper = () => {
-    return <InfoCenter stage={computeStage(TStage, NStage, MStage)}></InfoCenter>
+    return <InfoCenter stage={computeStage(TStage, NStage, MStage)} fiveYearSurvival={computeFiveYearSurvival()}></InfoCenter>
   }
 
   // Simply calcuate the stage from TNM options
@@ -116,25 +116,33 @@ export default function App() {
   }
 
   return (
-
     <>
-      <View style={styles.container}>
-        <CaseHeader 
-          caseName = {caseName}
-          stage = {computeStage(TStage, NStage, MStage)}
-          caseStagingStatus = {caseStagingStatus}
-          fiveYearSurvival={computeFiveYearSurvival()}
-          TStage={TStage}/>
-        <NavigationBar 
-          TStage={TStage}
-          NStage={NStage}
-          MStage={MStage}
-          setCurrentStep={setCurrentStep}
-        />
-        <ScrollView>
-          {renderPage()}
-        </ScrollView>
-      </View>
+          <StatusBar
+            backgroundColor="blue"
+            />
+      <SafeAreaView style={styles.container}>
+        <View style={{ backgroundColor: "#EDEEFC" }}> 
+        {/* this view is actually useless, just to add a new level of depth*/}
+          <View style={styles.topBar}>
+            <CaseHeader 
+              caseName = {caseName}
+              stage = {computeStage(TStage, NStage, MStage)}
+              caseStagingStatus = {caseStagingStatus}
+              fiveYearSurvival={computeFiveYearSurvival()}
+              TStage={TStage}/>
+            <NavigationBar 
+              TStage={TStage}
+              NStage={NStage}
+              MStage={MStage}
+              setCurrentStep={setCurrentStep}
+            />
+          </View>
+
+        </View>
+          <ScrollView style={styles.contentView}>
+            {renderPage()}
+          </ScrollView>
+      </SafeAreaView>
       <BottomSheet
         ref={ref}
         snapPoints={['80%', '40%', '20%']}
@@ -148,10 +156,19 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 18,
     flex: 1,
-    backgroundColor: '#e8e8e8',
-    alignItems: 'flex-start',
-    justifyContent: 'center',
+    backgroundColor: "white",
   },
+  topBar: {
+    backgroundColor: "white",
+    paddingHorizontal: 18,
+    paddingTop: 8,
+    paddingBottom: 18,
+    borderBottomLeftRadius: 18,
+    borderBottomRightRadius: 18,
+  },
+  contentView: {
+    backgroundColor: "#EDEEFC",
+    paddingHorizontal: 18
+  }
 });
