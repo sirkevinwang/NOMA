@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useRef } from 'react';
-import { StyleSheet, Button, View, Text } from 'react-native';
+import { StyleSheet, Button, View, Text, ScrollView} from 'react-native';
 import Animated from 'react-native-reanimated';
 import BottomSheet from 'reanimated-bottom-sheet';
 
@@ -81,7 +81,7 @@ export default function App() {
 
   // Simply calcuate the stage from TNM options
   const computeStage = (T, N, M) => {
-    let stage = ""
+    let stage = "TBD"
     // this is hard coded
     if (T.depth != null) {
       stage = "T" + T.depth
@@ -128,11 +128,14 @@ export default function App() {
           MStage={MStage}
           setCurrentStep={setCurrentStep}
         />
-        {renderPage()}
+        <ScrollView>
+          {renderPage()}
+        </ScrollView>
       </View>
       <BottomSheet
         ref={ref}
         snapPoints={['80%', '40%', '20%']}
+        initialSnap={2}
         renderContent={InfoCenterWrapper}
         renderHeader={DrawerHeader}
       />
