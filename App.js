@@ -12,6 +12,9 @@ import emptyCaseData from './cases/empty-case';
 import TPage from './Pages/TPage';
 import NPage from './Pages/NPage';
 import MPage from './Pages/MPage';
+import SLNBPage from './Pages/SLNBPage';
+
+
 import DrawerHeader from './components/InfoCenter/DrawerHeader';
 
 import StagingData from './data/StagingData';
@@ -24,6 +27,7 @@ export default function App() {
   const [caseStagingStatus, setCaseStagingStatus] = useState("Staging Incomplete");
   const [fiveYearSurvival, setFiveYearExpectancy] = useState(null);
 
+  
   // T Stage
   const [TStage, setTStage] = useState({
     "depth": null,
@@ -46,6 +50,30 @@ export default function App() {
   })
 
   const ref = useRef()
+
+  //Rendering Page Function
+  const renderPage = () => {
+ 
+    switch(currentStep){
+      case 'T':
+        return (<TPage 
+                    TStage = {TStage}
+                   setTStage = {setTStage}
+                />)
+      case 'N':
+        return (<NPage
+                  NStage = {NStage}
+                  setNStage= {setNStage}/>)
+       case 'M':
+        return (<MPage
+                  MStage = {MStage}
+                  setMStage= {setMStage}/>)
+       case 'SLNB':
+        return (<SLNBPage
+                  NStage = {NStage}
+                  setNStage= {setNStage}/>)
+    }
+}
 
   const InfoCenterWrapper = () => {
     return <InfoCenter stage={computeStage(TStage, NStage, MStage)}></InfoCenter>
@@ -93,20 +121,14 @@ export default function App() {
           stage = {computeStage(TStage, NStage, MStage)}
           caseStagingStatus = {caseStagingStatus}
           fiveYearSurvival={computeFiveYearSurvival()}
+          TStage={TStage}/>
+        <NavigationBar 
+          TStage={TStage}
+          NStage={NStage}
+          MStage={MStage}
+          setCurrentStep={setCurrentStep}
         />
-        <NavigationBar TStage={TStage}/>
-        {/* Page */}
-        <TPage 
-          TStage = {TStage}
-          setTStage = {setTStage} />
-        {/* <MPage
-          MStage = {MStage}
-          setMStage = {setMStage}
-        /> */}
-        {/* <NPage
-          NStage = {NStage}
-          setNStage= {setNStage}/>
-        <StatusBar style="auto" /> */}
+        {renderPage()}
       </View>
       <BottomSheet
         ref={ref}
@@ -116,6 +138,7 @@ export default function App() {
       />
     </>
   );
+
 }
 
 const styles = StyleSheet.create({
