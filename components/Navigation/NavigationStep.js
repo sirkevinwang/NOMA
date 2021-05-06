@@ -1,14 +1,19 @@
 import React from 'react'
-import { View, Text, StyleSheet} from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 
 const NavigationStep = (props) => {
 
     
     return (
-        <View style={styles.wrapper}>
-            <Text style={styles.stepTitle}>{props.title}</Text>
-            <Text style={styles.stepSubtitle}>{props.subtitle}</Text>
-        </View>
+        <TouchableOpacity
+            onPress={props.onPress}
+           >
+            <View style={styles.wrapper}>
+                <Text style={styles.stepTitle}>{props.title}</Text>
+                <Text style={styles.stepSubtitle}>{props.subtitle}</Text>
+             </View>
+        </TouchableOpacity>
+  
     )
 }
 
