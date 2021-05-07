@@ -1,10 +1,15 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 import OptionButton from '../components/Options/OptionButton';
 import TDepth from '../data/TDepth';
 
 const TPage = (props) => {
+    const styles = StyleSheet.create({
+        container:{
+            marginTop: 15,
+        }
+    });
     const DATA = TDepth;
 
 
@@ -41,7 +46,7 @@ const TPage = (props) => {
     );
 
     return (
-        <View>
+        <View style={styles.container}>
             {options}
         </View>
     )
