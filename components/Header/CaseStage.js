@@ -13,10 +13,16 @@ const CaseStage = (props) => {
     }
     return (
         <>
-        {/* <Text>{computeStageString(props.stage)} | {props.caseStatus}</Text> */}
-        <Text>{props.stage}</Text>
+        <Text style={styles.stageText}>{props.stage}</Text>
         </>
     );
 }
+const styles = StyleSheet.create({
 
+    stageText: {
+        color: "#6E6CF0",
+        fontWeight: "600",
+        fontSize: 24
+    }
+});
 export default CaseStage;
