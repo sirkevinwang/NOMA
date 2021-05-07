@@ -23,7 +23,6 @@ const OptionButton = (props) => {
             height: 60,
             justifyContent:'center',
             borderRadius: 10,
-        
         },
         activeTextColor: {
             color: '#fff',    
