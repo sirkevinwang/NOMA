@@ -111,7 +111,7 @@ const TPage = (props) => {
                             isActive={renderIsDepthActive(props.TStage, option.option_stage)}
                             onClick={() => depthOptionClicked(option.id)}
                         />,
-                        <View style={{ flexDirection: 'row', flexBasis: 0, flexGrow: 1, justifyContent: 'space-between' }}>
+                        <View key={option.id + "-t1-ulcer"} style={{ flexDirection: 'row', flexBasis: 0, flexGrow: 1, justifyContent: 'space-between' }}>
                             <OptionButton primaryTitle="a"
                                 description="without ulceration"
                                 isActive={renderNormalUlceratinActive(false)}
@@ -123,7 +123,7 @@ const TPage = (props) => {
                                 onClick={() => { normalUlcerationOptionClicked(true) }}
                             />
                         </View>,
-                        <View style={{ flexDirection: 'row', flexBasis: 0, flexGrow: 1, justifyContent: 'space-between', opacity: renderUlcerationBreslowDepthOpacity()}}>
+                        <View key={option.id + "-t1-08mmdepth"} style={{ flexDirection: 'row', flexBasis: 0, flexGrow: 1, justifyContent: 'space-between', opacity: renderUlcerationBreslowDepthOpacity()}}>
                             <OptionButton 
                                 primaryTitle="a"
                                 description="<0.8mm"
@@ -154,7 +154,7 @@ const TPage = (props) => {
                             isActive={renderIsDepthActive(props.TStage, option.option_stage)}
                             onClick={() => depthOptionClicked(option.id)}
                         />,
-                        <View style={{ flexDirection: 'row', flexBasis: 0, flexGrow: 1, justifyContent: 'space-between' }}>
+                        <View key={option.id + "-t2-4-ulceration"} style={{ flexDirection: 'row', flexBasis: 0, flexGrow: 1, justifyContent: 'space-between' }}>
                             <OptionButton primaryTitle="a"
                                 description="without ulceration"
                                 isActive={renderNormalUlceratinActive(false)}
