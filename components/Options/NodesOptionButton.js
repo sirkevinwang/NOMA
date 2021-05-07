@@ -11,7 +11,6 @@ const NodesOptionButton = (props) => {
         },
         bold: {
             fontWeight: '800',
-
         },
         textWrapper: {
     
@@ -25,9 +24,6 @@ const NodesOptionButton = (props) => {
             paddingTop: 15,
             paddingBottom: 4
         
-
-            
-            
         },
         activeTextColor: {
             color: '#fff',
