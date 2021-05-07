@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View , Text} from 'react-native';
 
 const DrawerHeader = () => (
     <View style={styles.header}>
         <View style={styles.panelHeader}>
             <View style={styles.panelHandle} />
+                <Text> I am text</Text>
         </View>
     </View>
 )
