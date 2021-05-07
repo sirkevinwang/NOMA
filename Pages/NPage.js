@@ -145,25 +145,12 @@ const NPage = (props) => {
 
     return (
         <React.Fragment>
-                        
-                <View style={styles.choicesContainer}>
+
+
+            <View style={styles.choicesContainer}>
                     <View style={styles.blurb}>
                         <ChoiceBlurb 
-                            blurbHeader={'How many metastatic nodes were discovered?'}
-                            blurbDescription={'This establishes the baseline for nodal spread.'}
-                            /> 
-
-                    </View>
-                    <View style={styles.nodeOptionsContainer}>
-                         {nodeNumberOptions}
-                     </View>
-                </View>
-
-
-                <View style={styles.choicesContainer}>
-                    <View style={styles.blurb}>
-                        <ChoiceBlurb 
-                            blurbHeader={'How many nodes were clinically\noccult?'}
+                            blurbHeader={'How many nodes were clinically\npalpable?'}
                             blurbDescription={'This helps us establish the clinical detectability'}
                             /> 
                     </View>
@@ -171,8 +158,19 @@ const NPage = (props) => {
                     <View style={styles.nodeOptionsContainer}>
                          {clincallyOccultOptions}
                      </View>
+                </View>                  
+                <View style={styles.choicesContainer}>
+                    <View style={styles.blurb}>
+                        <ChoiceBlurb 
+                            blurbHeader={'How many metastatic nodes were discovered?'}
+                            blurbDescription={'This establishes the baseline for nodal spread.'}
+                            /> 
+                    </View>
+                    <View style={styles.nodeOptionsContainer}>
+                         {nodeNumberOptions}
+                     </View>
                 </View>
-            
+
 
                 <View style={styles.choicesContainer}>
                     <View style={styles.blurb}>
