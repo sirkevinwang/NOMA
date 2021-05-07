@@ -16,7 +16,7 @@ const OptionButton = (props) => {
             borderColor: '#000',
             padding: 12,
             marginVertical: 8,
-            backgroundColor: props.isActive ? '#000' : '#fff'
+            backgroundColor: props.isActive ? '#414141' : '#fff'
         },
         activeTextColor: {
             color: '#fff'

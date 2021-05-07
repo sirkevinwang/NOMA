@@ -12,23 +12,26 @@ const NPage = (props) => {
     const styles = StyleSheet.create({
         choicesContainer:{
             marginTop: 20,
-            backgroundColor:'silver',
-            borderWidth: 1,
+            borderWidth: 0,
             width: Dimensions.get('window').width* 0.92,
-            borderRadius: 6,
-            marginBottom: 10
+            borderRadius: 10,
+            marginBottom: 10,
+            backgroundColor: 'white',
+            
         },
         blurb:{
-            padding: 16
+            padding: 16,
         },
         nodeOptionsContainer: {
             flexDirection:'row',
             alignItems: 'center',
             justifyContent: 'space-evenly', 
             height: 100,
-            borderTopColor: 'gray',
+            borderTopColor: 'lightgray',
             borderTopWidth: 1,
-            padding:10      
+            padding:10,
+            
+            
         },  
     });
 

@@ -6,25 +6,27 @@ const NodesOptionButton = (props) => {
         container: {
             flex: 1,
             flexGrow:1 ,
-            padding: 5,
+            padding: 5,       
             
         },
         bold: {
             fontWeight: '800',
+
         },
         textWrapper: {
     
             borderWidth: 1,
             borderStyle: 'solid',
-            borderColor: '#000',
-            padding: 20,
-            marginVertical: 9,
-            backgroundColor: props.isActive ? '#000' : '#fff',
+            borderColor: 'lightgray',
+            backgroundColor: props.isActive ? '#6E6CF0' : '#fff',
             alignItems: 'center',
             justifyContent: 'center',
+            borderRadius: 10,
+            paddingTop: 15,
+            paddingBottom: 4
+        
+
             
-            
-       
             
         },
         activeTextColor: {
