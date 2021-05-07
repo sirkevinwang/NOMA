@@ -5,7 +5,7 @@ import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity} from 'react
 const CaseTitle = () => {
 
     //Uses a toggle to change the state from text input to header label
-    const [caseName, setCaseName] = useState("Untitled Case");
+    const [caseName, setCaseName] = useState("");
     const [toggleHeader, setToggleHeader] = useState(false);
 
     return (
@@ -23,7 +23,7 @@ const CaseTitle = () => {
                 <React.Fragment>
                     <TextInput
                          style={styles.textInput}
-                         placeholder="Write your case name"
+                         placeholder="Tap to enter anatomic location"
                          onChangeText={caseName => setCaseName(caseName)}
                          defaultValue={caseName}/>
                     
