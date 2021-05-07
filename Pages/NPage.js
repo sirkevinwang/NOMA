@@ -12,23 +12,26 @@ const NPage = (props) => {
     const styles = StyleSheet.create({
         choicesContainer:{
             marginTop: 20,
-            backgroundColor:'silver',
-            borderWidth: 1,
+            borderWidth: 0,
             width: Dimensions.get('window').width* 0.92,
-            borderRadius: 6,
-            marginBottom: 10
+            borderRadius: 10,
+            marginBottom: 10,
+            backgroundColor: 'white',
+            
         },
         blurb:{
-            padding: 16
+            padding: 16,
         },
         nodeOptionsContainer: {
             flexDirection:'row',
             alignItems: 'center',
             justifyContent: 'space-evenly', 
             height: 100,
-            borderTopColor: 'gray',
+            borderTopColor: 'lightgray',
             borderTopWidth: 1,
-            padding:10      
+            padding:10,
+            
+            
         },  
     });
 
@@ -142,25 +145,12 @@ const NPage = (props) => {
 
     return (
         <React.Fragment>
-                        
-                <View style={styles.choicesContainer}>
+
+
+            <View style={styles.choicesContainer}>
                     <View style={styles.blurb}>
                         <ChoiceBlurb 
-                            blurbHeader={'How many metastatic nodes were discovered?'}
-                            blurbDescription={'This establishes the baseline for nodal spread.'}
-                            /> 
-
-                    </View>
-                    <View style={styles.nodeOptionsContainer}>
-                         {nodeNumberOptions}
-                     </View>
-                </View>
-
-
-                <View style={styles.choicesContainer}>
-                    <View style={styles.blurb}>
-                        <ChoiceBlurb 
-                            blurbHeader={'How many nodes were clinically\noccult?'}
+                            blurbHeader={'How many nodes were clinically\npalpable?'}
                             blurbDescription={'This helps us establish the clinical detectability'}
                             /> 
                     </View>
@@ -168,8 +158,19 @@ const NPage = (props) => {
                     <View style={styles.nodeOptionsContainer}>
                          {clincallyOccultOptions}
                      </View>
+                </View>                  
+                <View style={styles.choicesContainer}>
+                    <View style={styles.blurb}>
+                        <ChoiceBlurb 
+                            blurbHeader={'How many metastatic nodes were discovered?'}
+                            blurbDescription={'This establishes the baseline for nodal spread.'}
+                            /> 
+                    </View>
+                    <View style={styles.nodeOptionsContainer}>
+                         {nodeNumberOptions}
+                     </View>
                 </View>
-            
+
 
                 <View style={styles.choicesContainer}>
                     <View style={styles.blurb}>

@@ -6,10 +6,12 @@ const ChoiceBlurb = (props) => {
         blurbHeader:{
             fontWeight:'bold',
             fontSize: 18,
+            color:'#414141'
         },
         blurbDescription:{
             fontSize: 11,
-            paddingTop: 5
+            paddingTop: 5,
+            color:'#414141'
         }
         
     });
