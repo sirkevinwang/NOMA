@@ -3,9 +3,13 @@ import { View, Text, StyleSheet, Dimensions } from 'react-native';
 
 import OptionButton from '../components/Options/OptionButton';
 import NodesOptionButton from '../components/Options/NodesOptionButton';
+import SLNBOptionButton from '../components/Options/SLNBOptionButton';
+
 
 import NData from '../data/NData';
 import MSIData from '../data/MSIData';
+import SLNBData from '../data/SLNB';
+
 import ChoiceBlurb from '../components/Options/ChoiceBlurb';
 
 const NPage = (props) => {
@@ -21,6 +25,7 @@ const NPage = (props) => {
         },
         blurb:{
             padding: 16,
+            
         },
         nodeOptionsContainer: {
             flexDirection:'row',
@@ -30,13 +35,19 @@ const NPage = (props) => {
             borderTopColor: 'lightgray',
             borderTopWidth: 1,
             padding:10,
-            
-            
-        },  
+        }, 
+        SLNBOptions:{
+            marginTop: 10,
+           
+        }
+        
+ 
     });
 
     const NDATA = NData;
     const MSIDATA = MSIData;
+    const SLNBDATA = SLNBData;
+
 
     //Checking if # of nodes button is active 
     const computeNodeNumberIsActive = (NStage, optionStage) => {
@@ -59,6 +70,18 @@ const NPage = (props) => {
             return false
         }
     }
+
+    const computeSLNBIsActive = (NStage, optionStage) => {
+        if (NStage.SLNB === null) {
+            return false
+        } else if (NStage.SLNB === optionStage) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+
 
     //Checking if # of clinically occult button is active 
     const computeMSIIsActive = (NStage, optionStage) => {
@@ -91,6 +114,17 @@ const NPage = (props) => {
                 "clinically_occult": NDATA[id - 1].option_stage,
                 "lab_confirmed": props.NStage.lab_confirmed,
                 "MSI": props.NStage.MSI,
+            }
+        )
+    }
+
+    const SLNBOptionClicked = (id) => {
+        props.setNStage(
+            {
+                "SLNB": SLNBDATA[id].option_stage,
+                "clinically_occult": props.NStage.clinically_occult,
+                "lab_confirmed": props.NStage.lab_confirmed,
+                "MSI": props.NStage.MSI
             }
         )
     }
@@ -130,6 +164,16 @@ const NPage = (props) => {
         />
     );
 
+    const SLNBOptions = SLNBDATA.map((option) =>
+    <SLNBOptionButton 
+        key={option.id} 
+        primaryTitle={""}
+        description={option.option_stage} 
+        isActive={computeSLNBIsActive(props.NStage, option.option_stage)}
+        onClick={() => SLNBOptionClicked(option.id)}
+        />
+);
+
     const MSIOptions = MSIDATA.map((option) => 
         <NodesOptionButton 
             key={option.id} 
@@ -140,12 +184,8 @@ const NPage = (props) => {
     );
 
 
-
-
-
     return (
         <React.Fragment>
-
 
             <View style={styles.choicesContainer}>
                     <View style={styles.blurb}>
@@ -154,11 +194,27 @@ const NPage = (props) => {
                             blurbDescription={'This helps us establish the clinical detectability'}
                             /> 
                     </View>
-                    
+    
                     <View style={styles.nodeOptionsContainer}>
                          {clincallyOccultOptions}
                      </View>
-                </View>                  
+                </View>  
+
+
+                <View style={styles.choicesContainer}>
+                    <View style={styles.blurb}>
+                        <ChoiceBlurb
+                            blurbHeader={'Did you perform SLNB?'}
+                            blurbDescription={'Staging might change based off the SLNB results. Please refer to the Info Center for more information.'}
+                            />
+                        <View style={styles.SLNBOptions}>
+                            {SLNBOptions}
+                        </View>
+                        
+
+                    </View>
+                   
+                </View>                
                 <View style={styles.choicesContainer}>
                     <View style={styles.blurb}>
                         <ChoiceBlurb 

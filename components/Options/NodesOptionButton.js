@@ -7,10 +7,9 @@ const NodesOptionButton = (props) => {
             flex: 1,
             flexGrow:1 ,
             padding: 5,       
-            
         },
         bold: {
-            fontWeight: '800',
+            fontWeight: '600',
 
         },
         textWrapper: {
@@ -24,10 +23,7 @@ const NodesOptionButton = (props) => {
             borderRadius: 10,
             paddingTop: 15,
             paddingBottom: 4
-        
-
-            
-            
+      
         },
         activeTextColor: {
             color: '#fff',
