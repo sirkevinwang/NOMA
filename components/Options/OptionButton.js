@@ -47,6 +47,7 @@ const OptionButton = (props) => {
         <View>
             <TouchableWithoutFeedback onPress={props.onClick}>
                 <View style={[styles.textWrapper, props.style]}>
+                    
                     <Text style={props.isActive ? [styles.activeTextColor, styles.bold] : [styles.bold, styles.inActiveTextColor]}>{props.primaryTitle} </Text>
                     <View style={styles.marginVertical}></View>
                     <Text style={props.isActive ? [styles.activeTextColor, styles.descriptionPadding] : [styles.normal, styles.descriptionPadding]}>{props.description}</Text>

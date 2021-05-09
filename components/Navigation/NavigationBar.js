@@ -105,12 +105,6 @@ const NavigationBar = (props) => {
                 />
 
                 <NavigationStep
-                title={"SLNB"}
-                subtitle={calculateSLNB()}
-                onPress={() => switchPage("SLNB")}
-                />
-
-                <NavigationStep
                 title={calculateStepN().title}
                 subtitle={calculateStepN().subtitle}
                 onPress={() => switchPage('N')}/>

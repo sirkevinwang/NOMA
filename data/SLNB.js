@@ -1,29 +1,29 @@
-const SLNB = [
+const SLNBData = [
 
 {
         "id": 0,
         "stage": "",
-        "option_stage": "Not performed",
+        "option_stage": "SLNB was not performed",
         "description": "",
         "short_hand": "TBD"
     },
 {
         "id": 1,
         "stage": "",
-        "option_stage": "Positive",
+        "option_stage": "SLNB Negative",
         "description": "",
-        "short_hand": "Positive"
+        "short_hand": "Neg"
     },
 
     {
         "id": 2,
         "stage": "",
-        "option_stage": "Negative",
+        "option_stage": "SLNB Positive",
         "description": "",
-        "short_hand": "Negative"
+        "short_hand": "Pos"
     },
 
     
 ]
 
-export default SLNB;
+export default SLNBData;
