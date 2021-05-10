@@ -61,7 +61,7 @@ const NPage = (props) => {
     }
 
     //Checking if # of clinically occult button is active 
-    const computeClinacllyOccultIsActive = (NStage, optionStage) => {
+    const computeClinicallyOccultIsActive = (NStage, optionStage) => {
         if (NStage.clinically_occult === null) {
             return false
         } else if (NStage.clinically_occult === optionStage) {
@@ -122,6 +122,7 @@ const NPage = (props) => {
         props.setNStage(
             {
                 "SLNB": SLNBDATA[id].option_stage,
+                "node_number":props.NStage.node_number,
                 "clinically_occult": props.NStage.clinically_occult,
                 "lab_confirmed": props.NStage.lab_confirmed,
                 "MSI": props.NStage.MSI
@@ -155,11 +156,11 @@ const NPage = (props) => {
     );
 
     //creating the options for the clincally occult options
-    const clincallyOccultOptions = NDATA.map((option) => 
+    const clinicallyOccultOptions = NDATA.map((option) => 
         <NodesOptionButton 
             key={option.id} 
             primaryTitle={option.option_stage}
-            isActive={computeClinacllyOccultIsActive(props.NStage, option.option_stage)}
+            isActive={computeClinicallyOccultIsActive(props.NStage, option.option_stage)}
             onClick={() => clinicallyOccultOptionClicked(option.id)}
         />
     );
@@ -196,7 +197,7 @@ const NPage = (props) => {
                     </View>
     
                     <View style={styles.nodeOptionsContainer}>
-                         {clincallyOccultOptions}
+                         {nodeNumberOptions}
                      </View>
                 </View>  
 
@@ -223,7 +224,7 @@ const NPage = (props) => {
                             /> 
                     </View>
                     <View style={styles.nodeOptionsContainer}>
-                         {nodeNumberOptions}
+                         {clinicallyOccultOptions}
                      </View>
                 </View>
 

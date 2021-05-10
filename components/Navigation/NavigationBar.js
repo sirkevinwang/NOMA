@@ -16,29 +16,85 @@ const NavigationBar = (props) => {
 
     //Method to update the heading on the N Stage in the Stepper 
     const calculateStepN = () => { 
-        const MET_NODES_TO_ID = {"0": 0, "1": 1, "2": 2, "3": 3, "3+": 4}
         let NTitle = "N"
         let NSubtitle = ''
         
-        //helps caclulcate what's to be updated for the node number question
-        if (props.NStage.node_number != null){
-            NTitle = 'N' + props.NStage.node_number
-            NSubtitle = NData[MET_NODES_TO_ID[props.NStage.node_number]].short_hand
-        }
-
-        const OCC_NODES_TO_TITLE = {"0": 'a', "1": 'a', "2": 'b', "3": 'b', "3+": 'c'}
-
+        let macro_nodes = 0
+        let micro_nodes = 0
+        let plus = ''
+        let isMSI = "No MSI"
+        //palpable nodes = node_number
         //helps caclulcate what's to be updated for the number of clinically occult question
+        if (props.NStage.node_number != null){
+            if ( props.NStage.node_number === '4+'){
+                macro_nodes = 4
+            } else{
+                macro_nodes = Number(props.NStage.node_number)
+
+            }
+        }
+
+
         if (props.NStage.clinically_occult != null){
-            NTitle = NTitle + OCC_NODES_TO_TITLE[props.NStage.clinically_occult]
-            NSubtitle = NSubtitle + ' | ' + props.NStage.clinically_occult + ' oc.'
+            if ( props.NStage.clinically_occult === '4+'){
+                micro_nodes = 4
+            } else{
+                micro_nodes = Number(props.NStage.clinically_occult)
 
-        }
-        else{
-            NSubtitle = NSubtitle + ' | TBD'
+            }
         }
 
-        return {title:NTitle, subtitle:NSubtitle}
+        if (props.NStage.MSI != null){
+            isMSI = props.NStage.MSI
+        }
+
+        let number = 0
+        let letter = ''
+        let total_nodes = macro_nodes + micro_nodes
+    
+    
+     
+        if (isMSI === "MSI Present"){
+            letter = 'c'
+            if (total_nodes === 0){
+                number = 1
+            } else if (total_nodes === 1){
+                number = 2
+            } else {
+                number = 3
+            }
+        } else{
+            if (total_nodes === 1){
+                number = 1
+                if (micro_nodes ===1){
+                    letter = 'a'
+                } else {
+                    letter = 'b'
+                }
+            } else if (total_nodes === 2 || total_nodes === 3){
+                number = 2
+                if (macro_nodes >= 1) {
+                    letter = 'b'
+                } else {
+                    letter = 'a'
+                }
+            } else if (total_nodes >= 4) {
+                number = 3
+                if (macro_nodes >= 1){
+                    letter = 'b'
+                } else {
+                    letter = 'a'
+                }
+            }
+        }
+
+        NTitle = NTitle + number + letter
+        if (macro_nodes === 4 || micro_nodes === 4){
+            plus = "+"
+        }
+
+        NSubtitle = total_nodes + plus + " nodes" 
+        return {title: NTitle, subtitle: NSubtitle}
     }
 
 
