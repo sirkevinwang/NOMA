@@ -1,11 +1,18 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 import OptionButton from '../components/Options/OptionButton';
 import MDepth from '../data/MDepth';
 
 const MPage = (props) => {
     const DATA = MDepth;
+
+    const styles = StyleSheet.create({
+        container:{
+
+        }
+         
+    });
 
 
     const computeIsActive = (MStage, optionStage) => {
@@ -38,7 +45,7 @@ const MPage = (props) => {
     );
 
     return (
-        <View>
+        <View style={styles.container}>
             {options}
         </View>
     )
