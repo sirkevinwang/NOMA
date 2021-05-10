@@ -102,6 +102,8 @@ const NPage = (props) => {
                 "clinically_occult": props.NStage.clinically_occult,
                 "lab_confirmed": props.NStage.lab_confirmed,
                 "MSI": props.NStage.MSI,
+                "SLNB": props.NStage.SLNB
+
             }
         )
     }
@@ -114,6 +116,8 @@ const NPage = (props) => {
                 "clinically_occult": NDATA[id - 1].option_stage,
                 "lab_confirmed": props.NStage.lab_confirmed,
                 "MSI": props.NStage.MSI,
+                "SLNB": props.NStage.SLNB
+
             }
         )
     }
