@@ -1,5 +1,5 @@
 import React, { useRef }  from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { ScrollView, Text, StyleSheet } from 'react-native';
 import InfoCenterActionItem from './InfoCenterActionItem';
 import StagingData from '../../data/StagingData';
 import ActionGroups from '../../data/ActionGroups';
@@ -28,16 +28,13 @@ const InfoCenter = (props) => {
         }
     }
     return (
-        <View style={{
+        <ScrollView style={{
             backgroundColor: '#fff',
             padding: 16,
-            height: 800
         }}>
-
             <InfoCenterHeader survivalRate={props.fiveYearSurvival} stage={props.stage} />
-
             <InfoCenterContent sections={actionsObject()}></InfoCenterContent>
-        </View>
+        </ScrollView>
     )
 }
 

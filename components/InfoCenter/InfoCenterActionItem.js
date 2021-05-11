@@ -21,7 +21,7 @@ const InfoCenterActionItem = (props) => {
         <View style={styles.container}>
             <Text style={styles.title}>{props.title}</Text>
             {props.notes.map((note) =>
-                <Text key="note">{note}</Text>
+                <Text key={note+props.title}>{note}</Text>
             )}
             <Text>
             {computeMEs(props.classes)}

@@ -124,7 +124,7 @@ const TPage = (props) => {
                                 isABButton={true}
                             />
                             <OptionButton primaryTitle="b"
-                                description="with ulceration"
+                                description="w/ ulceration"
                                 isActive={renderNormalUlceratinActive(true)}
                                 onClick={() => { normalUlcerationOptionClicked(true) }}
                                 isABButton={true}
@@ -171,7 +171,7 @@ const TPage = (props) => {
                                 isABButton={true}
                             />
                             <OptionButton primaryTitle="b"
-                                description="with ulceration"
+                                description="w/ ulceration"
                                 isActive={renderNormalUlceratinActive(true)}
                                 onClick={() => { normalUlcerationOptionClicked(true) }}
                                 isABButton={true}
