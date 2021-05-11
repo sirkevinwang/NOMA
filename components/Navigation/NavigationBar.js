@@ -12,7 +12,18 @@ const NavigationBar = (props) => {
     const switchPage = (name) =>
     {
         props.setCurrentStep(name)
+        
     }
+
+    const isActive = (name) => {
+        if (props.currentStep === name){
+            return true
+        }
+        return false
+    }
+
+    //TButton is "T"
+    
 
     //Method to update the heading on the N Stage in the Stepper 
     const calculateStepN = () => { 
@@ -158,17 +169,27 @@ const NavigationBar = (props) => {
                 title={calculateStepT().title}
                 subtitle={calculateStepT().subtitle}
                 onPress={() => switchPage("T")}
+                currentStep={props.currentStep}
+                isActive={isActive('T')}
                 />
 
                 <NavigationStep
                 title={calculateStepN().title}
                 subtitle={calculateStepN().subtitle}
-                onPress={() => switchPage('N')}/>
+                onPress={() => switchPage('N')}
+                currentStep={props.currentStep}
+                isActive={isActive('N')}
+
+                />
 
                  <NavigationStep
                  title={calculateStepM().title}
                 subtitle={calculateStepM().subtitle}
-                onPress={() => switchPage('M')}/>
+                onPress={() => switchPage('M')}
+                currentStep={props.currentStep}
+                isActive={isActive('M')}
+                
+                />
 
 
             </View>
@@ -178,10 +199,10 @@ const NavigationBar = (props) => {
 
 const styles = StyleSheet.create({
     nav: {
-        display: 'flex'
+        display: 'flex',
     },
     row: {
-        flexDirection: 'row'
+        flexDirection: 'row',
     }
 });
 

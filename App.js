@@ -236,6 +236,7 @@ export default function App() {
               NStage={NStage}
               MStage={MStage}
               setCurrentStep={setCurrentStep}
+              currentStep={currentStep}
             />
           </View>
 
