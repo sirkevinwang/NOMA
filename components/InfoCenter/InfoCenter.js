@@ -4,7 +4,7 @@ import InfoCenterActionItem from './InfoCenterActionItem';
 import StagingData from '../../data/StagingData';
 import ActionGroups from '../../data/ActionGroups';
 import InfoCenterContent from './InfoCenterContent';
-import CaseFiveYearSurvivalRate from '../Header/CaseFiveYearSurvivalRate';
+import InfoCenterHeader from './InfoCenterHeader';
 
 const InfoCenter = (props) => {
     const STAGING_DATA = StagingData;
@@ -34,7 +34,7 @@ const InfoCenter = (props) => {
             height: 800
         }}>
 
-            <CaseFiveYearSurvivalRate survivalRate={props.fiveYearSurvival} />
+            <InfoCenterHeader survivalRate={props.fiveYearSurvival} stage={props.stage} />
 
             <InfoCenterContent sections={actionsObject()}></InfoCenterContent>
         </View>
