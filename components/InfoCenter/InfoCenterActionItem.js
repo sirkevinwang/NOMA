@@ -2,7 +2,18 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
 const InfoCenterActionItem = (props) => {
+    const computeNotes = () => {
+        if (props.notes === undefined) {
+            return (<></>)
+        } else {
+
+            return props.notes.map((note) =>
+                <Text key={note + props.title}>{note}</Text>
+            )
+        }
+    }
     const computeMEs = (cArr) => {
+        if (props.classes === undefined) return <></>
         let str = ""
         if (cArr.length > 1) {
             for (let i = 0; i < cArr.length; i++) {
@@ -20,9 +31,7 @@ const InfoCenterActionItem = (props) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{props.title}</Text>
-            {props.notes.map((note) =>
-                <Text key={note+props.title}>{note}</Text>
-            )}
+            {computeNotes()}
             <Text>
             {computeMEs(props.classes)}
             </Text>
