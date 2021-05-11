@@ -27,6 +27,12 @@ const NavigationBar = (props) => {
 
     //Method to update the heading on the N Stage in the Stepper 
     const calculateStepN = () => { 
+        
+        if (props.NStage.node_number === null){
+           return  {title: "N", subtitle: "TBD"}
+        }
+        
+        
         let NTitle = "N"
         let NSubtitle = ''
         
@@ -183,14 +189,12 @@ const NavigationBar = (props) => {
                 />
 
                  <NavigationStep
-                 title={calculateStepM().title}
-                subtitle={calculateStepM().subtitle}
-                onPress={() => switchPage('M')}
-                currentStep={props.currentStep}
-                isActive={isActive('M')}
-                
+                    title={calculateStepM().title}
+                    subtitle={calculateStepM().subtitle}
+                    onPress={() => switchPage('M')}
+                    currentStep={props.currentStep}
+                    isActive={isActive('M')}         
                 />
-
 
             </View>
         </View>

@@ -103,6 +103,11 @@ export default function App() {
     }
 
     const calculateStepN = () => { 
+
+      if (N.node_number === null){
+        return ""
+      }    
+      
       let NTitle = "N"
       
       let macro_nodes = 0
@@ -175,6 +180,7 @@ export default function App() {
 
 
       NTitle = NTitle + number + letter
+
 
       return NTitle
   }
