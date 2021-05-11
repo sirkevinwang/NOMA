@@ -249,7 +249,7 @@ export default function App() {
       </SafeAreaView>
       <BottomSheet
         ref={ref}
-        snapPoints={['80%', '40%', '20%']}
+        snapPoints={['70%', '40%', '20%']}
         initialSnap={2}
         renderContent={InfoCenterWrapper}
         renderHeader={DrawerHeader}
