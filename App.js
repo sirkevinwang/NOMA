@@ -218,9 +218,9 @@ export default function App() {
 
   return (
     <>
-          <StatusBar
-            backgroundColor="blue"
-            />
+      <StatusBar
+        backgroundColor="blue"
+        />
       <SafeAreaView style={styles.container}>
         <View style={{ backgroundColor: "#EDEEFC" }}> 
         {/* this view is actually useless, just to add a new level of depth*/}
@@ -242,15 +242,18 @@ export default function App() {
         </View>
           <ScrollView style={styles.contentView}>
             {renderPage()}
+            <View style={styles.fillerView}>
+
+            </View>
           </ScrollView>
       </SafeAreaView>
-      {/* <BottomSheet
+      <BottomSheet
         ref={ref}
         snapPoints={['80%', '40%', '20%']}
         initialSnap={2}
         renderContent={InfoCenterWrapper}
         renderHeader={DrawerHeader}
-      /> */}
+      />
     </>
   );
 }
@@ -271,5 +274,8 @@ const styles = StyleSheet.create({
   contentView: {
     backgroundColor: "#EDEEFC",
     paddingHorizontal: 18,
+  },
+  fillerView: {
+    height: 180
   }
 });
