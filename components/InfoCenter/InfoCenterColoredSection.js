@@ -16,6 +16,22 @@ const InfoCenterColoredSection = (props) => {
         }
     }
 
+    const renderActionItems = () => {
+        return <View style={styles.container}>
+            <Pressable onPress={toggleCollapseState}><Text style={styles.colorCodeTitle}>{props.priority}</Text></Pressable>
+            <View style={{ display: accordionOpen ? "block" : "none", backgroundColor: "white" }}>
+                {props.colorSectionObject.map((actionItem) =>
+                    <InfoCenterActionItem
+                        title={actionItem.title}
+                        notes={actionItem.notes}
+                        classes={actionItem.classes}
+                        key={actionItem.title}
+                    />
+                )}
+            </View>
+        </View>
+    }
+
     const styles = StyleSheet.create({
         container: {
             borderColor: "grey",
@@ -32,21 +48,7 @@ const InfoCenterColoredSection = (props) => {
         }
     })
 
-    return (
-        <View style={styles.container}>
-            <Pressable onPress={toggleCollapseState}><Text style={styles.colorCodeTitle}>{props.priority}</Text></Pressable>
-            <View style={{display: accordionOpen ? "block" : "none", backgroundColor: "white"}}>
-                {props.colorSectionObject.map((actionItem) => 
-                <InfoCenterActionItem 
-                title={actionItem.title} 
-                notes={actionItem.notes}
-                classes={actionItem.classes}
-                key={actionItem.title}
-                />
-                )}
-            </View>
-        </View>
-    )
+    return renderActionItems()
 
 }
 

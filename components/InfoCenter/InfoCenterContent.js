@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import {ScrollView, View, Text } from 'react-native'
 import InfoCenterSection from './InfoCenterSection'
 
 const InfoCenterContent = (props) => {
@@ -8,7 +8,10 @@ const InfoCenterContent = (props) => {
         if (props.sections === null) {
             // then say no action items available
             return (
+                <>
                 <Text>No action item available.</Text>
+                <View style={{height: 800}}></View>
+                </>
             )
         } else {
             const sections = props.sections
