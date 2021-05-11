@@ -118,14 +118,16 @@ const TPage = (props) => {
                         />,
                         <View key={option.id + "-t1-ulcer"} style={{ flexDirection: 'row', flexBasis: 0, flexGrow: 1, justifyContent: 'space-between' }}>
                             <OptionButton primaryTitle="a"
-                                description="without ulceration"
+                                description="no ulceration"
                                 isActive={renderNormalUlceratinActive(false)}
                                 onClick={() => { normalUlcerationOptionClicked(false) }}
+                                isABButton={true}
                             />
                             <OptionButton primaryTitle="b"
                                 description="with ulceration"
                                 isActive={renderNormalUlceratinActive(true)}
                                 onClick={() => { normalUlcerationOptionClicked(true) }}
+                                isABButton={true}
                             />
                         </View>,
                         <View key={option.id + "-t1-08mmdepth"} style={{ flexDirection: 'row', flexBasis: 0, flexGrow: 1, justifyContent: 'space-between', opacity: renderUlcerationBreslowDepthOpacity()}}>
@@ -134,12 +136,14 @@ const TPage = (props) => {
                                 description="<0.8mm"
                                 isActive={renderUlcerationBreslowDepthActive(false)}
                                 onClick={() => { ulcerationBreslowDepthClicked(false) }}
+                                isABButton={true}
                             />
                             <OptionButton 
                                 primaryTitle="b"
                                 description="0.8-1.0mm"
                                 isActive={renderUlcerationBreslowDepthActive(true)}
                                 onClick={() => { ulcerationBreslowDepthClicked(true) }}
+                                isABButton={true}
                             />
                         </View>
                     ]
@@ -161,14 +165,16 @@ const TPage = (props) => {
                         />,
                         <View key={option.id + "-t2-4-ulceration"} style={{ flexDirection: 'row', flexBasis: 0, flexGrow: 1, justifyContent: 'space-between' }}>
                             <OptionButton primaryTitle="a"
-                                description="without ulceration"
+                                description="no ulceration"
                                 isActive={renderNormalUlceratinActive(false)}
                                 onClick={() => { normalUlcerationOptionClicked(false) }}
+                                isABButton={true}
                             />
                             <OptionButton primaryTitle="b"
                                 description="with ulceration"
                                 isActive={renderNormalUlceratinActive(true)}
                                 onClick={() => { normalUlcerationOptionClicked(true) }}
+                                isABButton={true}
                             />
                         </View>
                     ]
