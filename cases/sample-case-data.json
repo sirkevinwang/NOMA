@@ -1,0 +1,25 @@
+{
+    "case_name": "R Distal Thigh, 3pm on Mar 20",
+    "stage": "T2A",
+    "clincial_stage": null,
+    "staging_status": "Incomplete",
+    "five_year_expectancy": 20,
+    "staging": {
+        "T": {
+            "depth": null,
+            "ulceration": false,
+            "more_than_0.8mm": false
+        },
+        "N": {
+            "SLNB": null,
+            "clinically_occult": 0,
+            "lab_confirmed": 0,
+            "MSI": false
+        },
+        "M": {
+            "mets": false,
+            "mets_location": null
+        }
+    }
+
+}
