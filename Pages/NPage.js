@@ -138,6 +138,7 @@ const NPage = (props) => {
     const MSIOptionClicked = (id) => {
         props.setNStage(
             {
+                "SLNB": props.NStage.SLNB,
                 "node_number": props.NStage.node_number,
                 "clinically_occult": props.NStage.clinically_occult,
                 "lab_confirmed": props.NStage.lab_confirmed,

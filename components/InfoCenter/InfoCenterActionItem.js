@@ -8,7 +8,7 @@ const InfoCenterActionItem = (props) => {
         } else {
 
             return props.notes.map((note) =>
-                <Text key={note + props.title}>{note}</Text>
+                <Text key={note + props.title}>{"∙ " + note}</Text>
             )
         }
     }

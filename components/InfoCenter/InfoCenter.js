@@ -32,7 +32,6 @@ const InfoCenter = (props) => {
             backgroundColor: '#fff',
             padding: 16,
         }}>
-            <InfoCenterHeader survivalRate={props.fiveYearSurvival} stage={props.stage} />
             <InfoCenterContent sections={actionsObject()}></InfoCenterContent>
         </ScrollView>
     )

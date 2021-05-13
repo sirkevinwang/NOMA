@@ -1,10 +1,13 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-
-const DrawerHeader = () => (
+import { StyleSheet, View, Dimensions} from 'react-native';
+import InfoCenterHeader from './InfoCenterHeader';
+const DrawerHeader = (props) => (
     <View style={styles.header}>
         <View style={styles.panelHeader}>
             <View style={styles.panelHandle} />
+            <View style={{ width: Dimensions.get('window').width - 32, paddingTop: 16}}>
+                <InfoCenterHeader  survivalRate={props.fiveYearSurvival} stage={props.stage} />
+            </View>
         </View>
     </View>
 )
@@ -19,6 +22,7 @@ const styles = StyleSheet.create({
     },
     panelHeader: {
         alignItems: 'center',
+        
     },
     panelHandle: {
         width: 40,

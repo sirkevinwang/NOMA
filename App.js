@@ -81,6 +81,10 @@ export default function App() {
     return <InfoCenter stage={computeStage(TStage, NStage, MStage)} fiveYearSurvival={computeFiveYearSurvival()}></InfoCenter>
   }
 
+  const renderInfoCenterHeader = () => {
+    return <DrawerHeader stage={computeStage(TStage, NStage, MStage)} fiveYearSurvival={computeFiveYearSurvival()}></DrawerHeader>
+   }
+
   // Simply calcuate the stage from TNM options
   const computeStage = (T, N, M) => {
 
@@ -259,7 +263,7 @@ export default function App() {
         snapPoints={['70%', '40%', '20%']}
         initialSnap={2}
         renderContent={InfoCenterWrapper}
-        renderHeader={DrawerHeader}
+        renderHeader={renderInfoCenterHeader}
       />
     </>
   );

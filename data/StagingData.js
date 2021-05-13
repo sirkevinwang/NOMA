@@ -1,15 +1,11 @@
 const StagingData = {
-    "T2": {
-        "survival_rate": "80%",
-        "action_group": "1",
-        "pathologic_stage": "IIA"
-    },
-    
     "TisN0M0" : { "survival_rate": "99%", "action_group": "1", "pathologic_stage": "0.0", "clincal_stage": "0.0" },
     "T1aN0M0" : { "survival_rate": "99%", "action_group": "2", "pathologic_stage": "IA", "clincal_stage": "IA" },
     "T1bN0M0" : { "survival_rate": "99%", "action_group": "3", "pathologic_stage": "IA", "clincal_stage": "IB" },
     "T2aN0M0" : { "survival_rate": "97%", "action_group": "4", "pathologic_stage": "IB", "clincal_stage": "IB" },
     "T2bN0M0" : { "survival_rate": "94%", "action_group": "5", "pathologic_stage": "IIA", "clincal_stage": "IIA" },
+    "T2b" : { "survival_rate": "Up to 94%", "action_group": "500001", "pathologic_stage": "At least IIA", "clincal_stage": "At least IIA" },
+    "T2bN0" : { "survival_rate": "Up to 94%", "action_group": "500002", "pathologic_stage": "At least IIA", "clincal_stage": "At least IIA" },
     "T3aN0M0" : { "survival_rate": "94%", "action_group": "6", "pathologic_stage": "IIA", "clincal_stage": "IIA" },
     "T3bN0M0" : { "survival_rate": "87%", "action_group": "7", "pathologic_stage": "IIB", "clincal_stage": "IIB" },
     "T4aN0M0" : { "survival_rate": "87%", "action_group": "8", "pathologic_stage": "IIB", "clincal_stage": "IIB" },
@@ -36,6 +32,7 @@ const StagingData = {
     "T2aN1cM0" : { "survival_rate": "83%", "action_group": "29", "pathologic_stage": "IIIB", "clincal_stage": "III" },
     "T2aN2bM0" : { "survival_rate": "83%", "action_group": "30", "pathologic_stage": "IIIB", "clincal_stage": "III" },
     "T2bN1aM0" : { "survival_rate": "83%", "action_group": "31", "pathologic_stage": "IIIB", "clincal_stage": "III" },
+    "T2bN1a" : { "survival_rate": "Up to 83%", "action_group": "3100001", "pathologic_stage": "At least IIIB", "clincal_stage": "At least III" },
     "T2bN1bM0" : { "survival_rate": "83%", "action_group": "32", "pathologic_stage": "IIIB", "clincal_stage": "III" },
     "T2bN1cM0" : { "survival_rate": "83%", "action_group": "33", "pathologic_stage": "IIIB", "clincal_stage": "III" },
     "T2bN2aM0" : { "survival_rate": "83%", "action_group": "34", "pathologic_stage": "IIIB", "clincal_stage": "III" },
@@ -68,7 +65,7 @@ const StagingData = {
     "T3bN2aM0" : { "survival_rate": "69%", "action_group": "61", "pathologic_stage": "IIIC", "clincal_stage": "III" },
     "T3bN2bM0" : { "survival_rate": "69%", "action_group": "62", "pathologic_stage": "IIIC", "clincal_stage": "III" },
     "T3bN2cM0" : { "survival_rate": "69%", "action_group": "63", "pathologic_stage": "IIIC", "clincal_stage": "III" },
-    "T3bN3aM0" : { "survival_rate": "69%", "action_group": "1", "pathologic_stage": "IIIC", "clincal_stage": "III" },
+    "T3bN3aM0" : { "survival_rate": "69%", "action_group": "64", "pathologic_stage": "IIIC", "clincal_stage": "III" },
     "T3bN3bM0" : { "survival_rate": "69%", "action_group": "65", "pathologic_stage": "IIIC", "clincal_stage": "III" },
     "T3bN3cM0" : { "survival_rate": "69%", "action_group": "66", "pathologic_stage": "IIIC", "clincal_stage": "III" },
     "T4aN2aM0" : { "survival_rate": "69%", "action_group": "67", "pathologic_stage": "IIIC", "clincal_stage": "III" },
@@ -1059,5 +1056,6 @@ const StagingData = {
     "T4bN3bM1d(1)" : { "survival_rate": "5%", "action_group": "1052", "pathologic_stage": "IV", "clincal_stage": "IV" },
     "T4bN3cM1d(1)" : { "survival_rate": "5%", "action_group": "1053", "pathologic_stage": "IV", "clincal_stage": "IV" },
 }
+
 
 export default StagingData;
