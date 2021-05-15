@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, ShadowPropTypesIOS } from 'react-native';
 import NavigationStep from './NavigationStep';
 import TDepth from '../../data/TDepth';
-import MDepth from '../../data/MDepth';
+import MData from '../../data/MData';
 import NData from '../../data/NData';
 import MPage from '../../Pages/MPage';
 
@@ -121,7 +121,7 @@ const NavigationBar = (props) => {
 
         if (props.MStage.mets != null) {
             let MTitle = "M" + props.MStage.mets
-            let MSubtitle = MDepth[STAGE_TO_ID[props.MStage.mets] - 1].short_hand
+            let MSubtitle = MData[STAGE_TO_ID[props.MStage.mets] - 1].short_hand
             return {title:MTitle, subtitle:MSubtitle}
         }
         return {title:'M', subtitle:'TBD'}

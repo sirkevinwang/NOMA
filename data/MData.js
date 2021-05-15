@@ -1,4 +1,4 @@
-const MDepth = [
+const MData = [
     {
         "id": 1,
         "stage": "M",
@@ -37,4 +37,4 @@ const MDepth = [
 
 ]
 
-export default MDepth;
+export default MData;

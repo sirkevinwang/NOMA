@@ -2,10 +2,10 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 import OptionButton from '../components/Options/OptionButton';
-import MDepth from '../data/MDepth';
+import MData from '../data/MData';
 
 const MPage = (props) => {
-    const DATA = MDepth;
+    const DATA = MData;
 
     const styles = StyleSheet.create({
         container:{
