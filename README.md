@@ -1,5 +1,5 @@
 # NOMA
-[NOMA app cover image](docs/noma_cover.png)
+![NOMA app cover image](docs/noma_cover.png)
 
 ## Welcome to NOMA
 NOMA is a mobile app that helps dermatologists stage melanoma. 
