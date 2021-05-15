@@ -1,10 +1,12 @@
 # NOMA
+[NOMA app cover image](docs/noma_cover.png)
+
 ## Welcome to NOMA
 NOMA is a mobile app that helps dermatologists stage melanoma. 
 
 ## Setup
-- Install with `yarn` or `npm install`
-- Run `expo start` to try it out.
+* Install with `yarn` or `npm install`
+* Run `expo start` to try it out.
 
 NOMA is built with Expo and React Native, meaning that it could be deployed to iOS, Android, and the Web. Depending on how you would like to run NOMA, you can run `yarn ios` to run NOMA on the iOS simulator, `yarn android` to run on the Android simulator, or `yarn web` to run NOMA in a web browser. You can also download the Expo app from any mobile App Store and scan the QR code in the Expo browser window to run NOMA on a physical device.
 
@@ -16,14 +18,16 @@ NOMA has been designed with scalability in mind.
 ## Contributors
 
 The original NOMA app is developed by the following team members as a part of their 2021 BHCI Capstone Project at Carnegie Mellon University:
-Matthew Fang ()
-Alia Friedman ()
-Kevin Wang (@sirkevinwang)
-Amanda Yang ()
-Sabrina Zhai
+
+* Matthew Fang ([@mattfang1999](https://github.com/Aliacf21))
+* Alia Friedman ([@Aliacf21](https://github.com/Aliacf21)))
+* Kevin Wang ([@sirkevinwang](https://github.com/sirkevinwang))
+* Amanda Yang ([@AmandaYyy9](https://github.com/AmandaYyy9))
+* Sabrina Zhai
 
 This project is also sponsored by our clients:
-Bryan Carroll, MD, PhD
-Amy Blake, MD, MA
+
+* Bryan Carroll, MD, PhD
+* Amy Blake, MD, MA
 
 We also want to thank CMU HCII's Prof. Vincent Aleven, the team's faculty mentor, for his guidance and support.
