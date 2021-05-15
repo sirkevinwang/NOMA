@@ -7,12 +7,12 @@ NOMA is a mobile app that helps dermatologists stage melanoma. The app guides pr
 With NOMA, we are reshaping how melanoma is staged by catering to practitioners with different levels of expertise. We are also helping them come up with the best treatment plans with features like the information center. We hope NOMA can pave the way for that day where there’s no melanoma that can’t be cured.
 
 ### Info Center
-NOMA features the Info Center, an informational UI element that dynamically updates based on the context, offering practitioners the next steps as well as treatment options depending where they are in the staging process.
+NOMA features the Info Center, an informational UI element that dynamically updates based on the context, offering practitioners the next steps as well as treatment options depending on where they are in the staging process.
 
 All the suggestions are from the latest NCCN guidelines.
 
 ### Privacy & HIPAA
-NOMA is primarily intended to be deployed as a native mobile app that runs entirely on-device. Currently, the app stages melanoma cases using the databased stored on-device (which is shipped as a part of the app). While the app currently does not store case information, the information it collects has been engineered in such a way that cases are de-identified. The app will only be able to collect the stage, anatomic site, and the date of the case should the case storage feature be implemented.
+NOMA is primarily intended to be deployed as a native mobile app that runs entirely on-device. Currently, the app stages melanoma cases using the database stored on-device (which is shipped as a part of the app). While the app currently does not store case information, the information it collects has been engineered in such a way that cases are de-identified. The app will only be able to collect the stage, anatomic site, and the date of the case should the case storage feature be implemented.
 
 ## Setup
 * Install with `yarn` or `npm install`
@@ -23,7 +23,7 @@ NOMA is built with Expo and React Native, meaning that it could be deployed to i
 ## Data
 Medical guidelines are constantly changing, so NOMA has been designed with scalability in mind. The data powering NOMA are stored in the format of JSON and ship with the app when compiled. This eliminates the need for the app to request that melanoma guideline information from a remote location.
 
-Specifically, there are three parts to database structure: the staging data, the action item groups, and the staging options. All of these have been stored under the `data` folder. 
+Specifically, there are three parts to the data structure: the staging data, the action item groups, and the staging options. All of these have been stored under the `data` folder. 
 
 
 ### Action Groups
@@ -39,7 +39,7 @@ The options data are stored in separated as files named "TDepth", "MSIData", "MD
 To help non-programmers edit the staging data, we have created two Excel templates that are found inside the `parser` folder. 
 
 **‌ActionItems Data.xlsx**
-The file contains ActionGroup data. Rather than writing the next step / treatment items across, you should do Each row represents a next step / treatment option item that belong to an action group. You should always start with action group 1. We have provided a data dictionary in the template file.
+The file contains ActionGroup data. Rather than writing the next step / treatment items across, you should enter them individually, row by row. Each row represents a next step / treatment option item that belong to an action group. You should always start with action group 1. We have provided a data dictionary in the template file.
 
 **‌StagingGroup Data.xlsx**
 The file that contains the staging data. Each row is a possible stage (e.g. T1aN1aM0). Each row has a linked staging data group number, which you should enter based on what you have entered in ActionItems. You should also enter the survival rate and the clinical & pathological stages. Again, we have provided the data dictionary in the template file.
