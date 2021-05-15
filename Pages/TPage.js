@@ -130,7 +130,7 @@ const TPage = (props) => {
                                 isABButton={true}
                             />
                         </View>,
-                        <View key={option.id + "-t1-08mmdepth"} style={{ flexDirection: 'row', flexBasis: 0, flexGrow: 1, justifyContent: 'space-between', opacity: renderUlcerationBreslowDepthOpacity()}}>
+                        <View key={option.id + "-t1-08mMData"} style={{ flexDirection: 'row', flexBasis: 0, flexGrow: 1, justifyContent: 'space-between', opacity: renderUlcerationBreslowDepthOpacity()}}>
                             <OptionButton 
                                 primaryTitle="a"
                                 description="<0.8mm"
