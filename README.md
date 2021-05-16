@@ -49,7 +49,7 @@ You can find the sample data populated in these Excel files.
 After entering the staging & recommendation data into these Excel files, we have written two python parsers so that you won't have to manually write JSON. You should following these steps to import that data into the app:
 1. Install the latest python
 2. Run `pip install pandas` and `pip install xlrd` to install the required packages.
-3. Navigate to the `parser` folder. Be to that the Excel files are under this folder and are NOT renamed.
+3. Navigate to the `parser` folder. Be to that the Excel files are under this folder and are NOT renamed. If you need to update the files either edit them directly or insert a new file with the same name writing over the previous excel file
 4. Run `python actionItemParser.py` and then copy the JSON portion of the print out.
 5. Paste the copied JSON into `ActionGroups.js` to replace the content after the equal sign. The `export default ActionGroups;` should not be changed.
 6. Run `python stagingGroupsParser.py` and copy the JSON portion of the print out.
