@@ -3,12 +3,12 @@ import pandas as pd
 fileName = 'ActionItems Data.xlsx'
 book = xlrd.open_workbook("ActionItems Data.xlsx")
 df = pd.read_excel(fileName)
+df.dropna(how='all')
 
 #returns a dataframe based on the staging group, action nature, and action type
 def parse(stage_group_num, action_nature_type, action_type):
 	#Example: df.loc[df["StageGroup"] == 1]
 	stage_group = df.loc[df["StageGroup"] == stage_group_num]
-
 
 	#stage_group.loc[stage_group["Action Nature"] == "Workup"]
 	action_nature = stage_group.loc[stage_group["Action Nature"] == action_nature_type]
@@ -105,8 +105,15 @@ def formatting():
 
 	#Returns a list of all the unique staging groups
 	x = df.StageGroup.unique()
-	stage_group = [n for n in x if type(n) == int]
 
+	stage_group = []
+	for m in x:
+		try:
+			stage_group.append(int(m))
+		except ValueError as verr:
+			pass
+		except Exception as ex:
+			pass
 	#opening Json parethensis
 	print("{")
 
@@ -172,10 +179,3 @@ def formatting():
 	print("}")
 
 formatting()
-
-
-
-
-
-
-
