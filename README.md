@@ -15,7 +15,8 @@ All the suggestions are from the latest NCCN guidelines.
 NOMA is primarily intended to be deployed as a native mobile app that runs entirely on-device. Currently, the app stages melanoma cases using the database stored on-device (which is shipped as a part of the app). While the app currently does not store case information, the information it collects has been engineered in such a way that cases are de-identified. The app will only be able to collect the stage, anatomic site, and the date of the case should the case storage feature be implemented.
 
 ## Setup
-* Install with `yarn` or `npm install`
+* Install `Node.js` from here: https://nodejs.org/en/download/
+* Navigate to the current directory and install dependencies with `yarn` or `npm install`
 * Run `expo start` to try it out.
 
 NOMA is built with Expo and React Native, meaning that it could be deployed to iOS, Android, and the Web. Depending on how you would like to run NOMA, you can run `yarn ios` to run NOMA on the iOS simulator, `yarn android` to run on the Android simulator, or `yarn web` to run NOMA in a web browser. You can also download the Expo app from any mobile App Store and scan the QR code in the Expo browser window to run NOMA on a physical device.
@@ -48,12 +49,14 @@ You can find the sample data populated in these Excel files.
 
 After entering the staging & recommendation data into these Excel files, we have written two python parsers so that you won't have to manually write JSON. You should following these steps to import that data into the app:
 1. Install the latest python
-2. Run `pip install pandas` and `pip install xlrd` to install the required packages.
-3. Navigate to the `parser` folder. Be to that the Excel files are under this folder and are NOT renamed. If you need to update the files either edit them directly or insert a new file with the same name writing over the previous excel file
-4. Run `python actionItemParser.py` and then copy the JSON portion of the print out.
-5. Paste the copied JSON into `ActionGroups.js` to replace the content after the equal sign. The `export default ActionGroups;` should not be changed.
-6. Run `python stagingGroupsParser.py` and copy the JSON portion of the print out.
-7. Paste the copied JSON into `StagingData.js` to replace the content after the equal sign. Again, the last line should not be modified.
+2. Run `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
+3. Run `python3 get-pip.py`
+4. Run `pip install pandas` and `pip install xlrd` to install the required packages.
+5. Navigate to the `parser` folder. Be to that the Excel files are under this folder and are NOT renamed. If you need to update the files either edit them directly or insert a new file with the same name writing over the previous excel file
+6. Run `python actionItemParser.py` and then copy the JSON portion of the print out.
+7. Paste the copied JSON into `ActionGroups.js` to replace the content after the equal sign. The `export default ActionGroups;` should not be changed.
+8. Run `python stagingGroupsParser.py` and copy the JSON portion of the print out.
+9. Paste the copied JSON into `StagingData.js` to replace the content after the equal sign. Again, the last line should not be modified.
 
 You have successfully updated the staging & recommendation data. Run `yarn start` to see your data updated. 
  
