@@ -4,7 +4,8 @@ fileName = 'ActionItems Data.xlsx'
 book = xlrd.open_workbook("ActionItems Data.xlsx")
 df = pd.read_excel(fileName)
 df.dropna(how='all')
-
+print("Running...")
+f = open("actionItem.json", "w")
 #returns a dataframe based on the staging group, action nature, and action type
 def parse(stage_group_num, action_nature_type, action_type):
 	#Example: df.loc[df["StageGroup"] == 1]
@@ -89,15 +90,15 @@ def internalFormatting(df_list, index):
 
 	formated9 = "\n\t\t\t\t" + "} \n"
 
-	print(formated5 + formated6 + formated7 + formated8)
+	f.write(formated5 + formated6 + formated7 + formated8)
 
 	#Checks to see if the last element to see whether comma is needed
 	if index != len(df_list) -1: 
 		formated9 = "\n\t\t\t\t" + "}, \n"
-		print(formated9)
+		f.write(formated9)
 	else:
 		formated9 = "\n\t\t\t\t" + "} \n"
-		print(formated9)
+		f.write(formated9)
 
 
 #Formats the json
@@ -115,7 +116,7 @@ def formatting():
 		except Exception as ex:
 			pass
 	#opening Json parethensis
-	print("{")
+	f.write("{")
 
 	#Defines the quatation mark character
 	quotation= "\""
@@ -126,14 +127,14 @@ def formatting():
 		formated1 = quotation + str(stageGroup) + quotation + ": { \n"
 		formated2 = "\t" + quotation + "actions" + quotation + ": {"
 
-		print(formated1 + formated2)
+		f.write(formated1 + formated2)
 	
 		#Get the unique action nature and action types for each stage group
 		(Action_nature, Action_type) = Action_natures_and_Action_type(stageGroup)
 
 		for actionNature in Action_nature: 
 			formated3 = "\t\t" + quotation + actionNature +  quotation + ": {"
-			print(formated3)
+			f.write(formated3)
 
 			for actionType in Action_type:
 				titles = []
@@ -145,7 +146,7 @@ def formatting():
 
 				formated4 = "\t\t\t" + quotation + actionType + quotation + ": [ \n"
 
-				print(formated4)
+				f.write(formated4)
 				
 				for index in range(len(df_list)):
 					
@@ -154,28 +155,29 @@ def formatting():
 				#Checks to see if the last element to see whether comma is needed
 				if actionType != Action_type[-1] or (index != len(df_list) -1 and len(df_list) != 0): 
 					formated10 = "\n\t\t\t" + "], \n"
-					print(formated10)
+					f.write(formated10)
 				else:
 					formated10 = "\n\t\t\t" + "] \n"
-					print(formated10)
+					f.write(formated10)
 
 			if actionNature == Action_nature[-1]:
-				print("}")
+				f.write("}")
 			else:
 				formated10_1 = "\n\t\t" + "}, \n"
-				print(formated10_1)
+				f.write(formated10_1)
 			
 		
-		print("}")
+		f.write("}")
 		#Checks to see if the last element to see whether comma is needed
 		if stageGroup != stage_group[-1]: 
 			formated12 = "\t" + "}, \n"
-			print(formated12)
+			f.write(formated12)
 		else:
 			formated12 = "\t" + "} \n"
-			print(formated12)
+			f.write(formated12)
 
 	#closeing Json paren
-	print("}")
+	f.write("}")
+	print("done, copy and paste from the new json file under the current directory")
 
 formatting()
