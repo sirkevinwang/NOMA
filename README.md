@@ -17,7 +17,7 @@ NOMA is primarily intended to be deployed as a native mobile app that runs entir
 ## Setup
 * Install `Node.js` from here: https://nodejs.org/en/download/
 * Navigate to the current directory and install dependencies with `yarn` or `npm install`
-* Run `expo start` to try it out.
+* Run `npm start` to try it out.
 
 NOMA is built with Expo and React Native, meaning that it could be deployed to iOS, Android, and the Web. Depending on how you would like to run NOMA, you can run `yarn ios` to run NOMA on the iOS simulator, `yarn android` to run on the Android simulator, or `yarn web` to run NOMA in a web browser. You can also download the Expo app from any mobile App Store and scan the QR code in the Expo browser window to run NOMA on a physical device.
 
