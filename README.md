@@ -51,7 +51,7 @@ After entering the staging & recommendation data into these Excel files, we have
 1. Install the latest python
 2. Run `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
 3. Run `python3 get-pip.py`
-4. Run `pip install pandas` and `pip install xlrd` to install the required packages.
+4. Run `pip install pandas`, `pip install xlrd==1.2.0`, and `pip install openpyxl` to install the required packages.
 5. Navigate to the `parser` folder. Be to that the Excel files are under this folder and are NOT renamed. If you need to update the files either edit them directly or insert a new file with the same name writing over the previous excel file
 6. Run `python actionItemParser.py` and then copy the JSON portion of the print out.
 7. Paste the copied JSON into `ActionGroups.js` to replace the content after the equal sign. The `export default ActionGroups;` should not be changed.
